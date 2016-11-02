@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExchangeBook</string>
+    <string name="title_activity_import">ImportActivity</string>
 </resources>
