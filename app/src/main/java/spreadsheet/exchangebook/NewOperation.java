@@ -1,18 +1,19 @@
 package spreadsheet.exchangebook;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.content.Intent;
 
-public class InputActivity extends AppCompatActivity {
+public class NewOperation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input);
+        setContentView(R.layout.activity_new_operation);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,4 +34,5 @@ public class InputActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
