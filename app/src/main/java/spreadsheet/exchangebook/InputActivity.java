@@ -1,13 +1,13 @@
 package spreadsheet.exchangebook;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.content.Intent;
 
-public class InputActivity extends AppCompatActivity {
+public class InputActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

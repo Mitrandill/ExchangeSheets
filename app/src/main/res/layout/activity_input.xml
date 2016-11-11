@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:inputType="numberSigned"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/initialAmount"
         android:layout_marginTop="10dp" />
     </RelativeLayout>
     <RelativeLayout
@@ -149,8 +149,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/revert">
+            android:layout_marginLeft="10dp">
             <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
