@@ -2,15 +2,15 @@
     <string name="app_name">ExchangeBook</string>
     <string name="title_activity_new_operation">New Operation</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="NextButton">Next</string>
-    <string name="WelcomeText">Welcome in our cool application! Please click next for select category!</string>
+    <string name="NextButton">Enter</string>
+    <string name="WelcomeText">Good day!Please authorization!</string>
     <string name="title_activity_category_select">CategorySelectActivity</string>
     <string name="title_activity_main_menu">MainMenuActivity</string>
     <string name="NextButton2">New Operation</string>
     <string name="NextButton3">View Operation</string>
-    <string name="WelcomeText1">Please click button for select ACT!</string>
-    <string name="Hello">Hello Anatoly</string>
-    <string name="Back">Назад</string>
-    <string name="BackButton">Выход</string>
-    <string name="new_exchange">Новый обмен</string>
+    <string name="WelcomeText1">Please take your pick</string>
+    <string name="Hello">\"Good day user! \"</string>
+    <string name="Back">Back</string>
+    <string name="BackButton">Exit</string>
+    <string name="new_exchange">New exchange</string>
 </resources>

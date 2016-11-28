@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExchangeBook</string>
+    <string name="Back">Назад</string>
+    <string name="BackButton">Выход</string>
+    <string name="Hello">Добрый день пользователь !</string>
+    <string name="NextButton">Вход</string>
+    <string name="NextButton2">Новая Операция</string>
+    <string name="NextButton3">Просмотр операций</string>
+    <string name="WelcomeText">Добрый день! Пожалуйста авторизируйтесь!</string>
+    <string name="WelcomeText1">Пожалуйста выберите интересующую операцию</string>
+    <string name="new_exchange">Новый обмен</string>
+    <string name="title_activity_category_select">Выбор просмотра операций</string>
+    <string name="title_activity_new_operation">Новая Операция</string>
+    <string name="title_activity_main_menu">Меню выбора операций</string>
+    <string name="title_activity_main">Меню авторизации</string>
+</resources>
