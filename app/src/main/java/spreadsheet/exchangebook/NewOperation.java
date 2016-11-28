@@ -11,8 +11,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class NewOperation extends Activity {
 
@@ -44,7 +48,7 @@ public class NewOperation extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
+        final Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
         spinnerFrom.setAdapter(adapter);
         // заголовок
         spinnerFrom.setPrompt("From Currency");
@@ -69,7 +73,7 @@ public class NewOperation extends Activity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
+        final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
         spinnerTo.setAdapter(adapter);
         // заголовок
         spinnerTo.setPrompt("To Currency");
@@ -89,11 +93,19 @@ public class NewOperation extends Activity {
             }
         });
 
+        final EditText fromValue = (EditText) findViewById(R.id.amountValue);
+        final EditText toValue = (EditText) findViewById(R.id.amountValue2);
+
         Button saveButton = (Button) findViewById(R.id.Save);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.insertExcengeRecord(10, "UAH", 100, "EUR", "some now", "some_hash");
+                String currentDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date());
+                db.insertExcengeRecord(Integer.parseInt(fromValue.getText().toString()) * 100,
+                        CurrencyNames[spinnerFrom.getSelectedItemPosition()],
+                        Integer.parseInt(toValue.getText().toString()) * 100,
+                        CurrencyNames[spinnerTo.getSelectedItemPosition()],
+                        currentDate, "some_hash");
             }
         });
     }
