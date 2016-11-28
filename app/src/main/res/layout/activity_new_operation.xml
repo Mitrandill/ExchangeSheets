@@ -8,72 +8,72 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.mixail.test.MainActivity">
+    tools:context="spreadsheet.exchangebook.NewOperation">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
             <Button
-                android:text="Назад"
+                android:id="@+id/Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Button"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Назад" />
 
             <TextView
-                android:text="Новый обмен"
+                android:id="@+id/NEW"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/NEW"
-                android:layout_marginLeft="48dp"
-                android:layout_marginStart="48dp"
                 android:layout_alignBaseline="@+id/Button"
                 android:layout_alignBottom="@+id/Button"
+                android:layout_marginLeft="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_toEndOf="@+id/Button"
                 android:layout_toRightOf="@+id/Button"
-                android:layout_toEndOf="@+id/Button" />
+                android:text="Новый обмен" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
             <Button
-                android:text="Продажа"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/button5"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="44dp"
-                android:layout_marginEnd="44dp" />
-
-            <Button
-                android:text="Покупка"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="44dp"
+                android:layout_marginRight="44dp"
+                android:text="Продажа" />
+
+            <Button
                 android:id="@+id/button7"
-                android:layout_alignParentTop="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Покупка" />
 
         </RelativeLayout>
 
@@ -83,35 +83,35 @@
             android:layout_weight="0.08">
 
             <EditText
-                android:text="12345"
+                android:id="@+id/amountValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/amountValue"
+                android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/amountText"
-                android:layout_alignParentBottom="true" />
+                android:text="12345" />
 
             <Spinner
-                android:layout_height="match_parent"
                 android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
                 android:layout_toRightOf="@+id/amountValue"
                 android:width="50dp"
-                android:layout_width="wrap_content"
                 android:contextClickable="true" />
 
             <TextView
-                android:text="Сумма"
+                android:id="@+id/amountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/amountText"
-                android:elevation="0dp"
-                android:width="100dp"
-                android:textSize="24sp"
                 android:layout_alignBaseline="@+id/amountValue"
                 android:layout_alignBottom="@+id/amountValue"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:width="100dp"
+                android:elevation="0dp"
+                android:text="Сумма"
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -119,23 +119,23 @@
             android:layout_height="56dp">
 
             <TextView
-                android:text="Сумма"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:elevation="0dp"
+                android:layout_alignParentBottom="true"
                 android:width="100dp"
-                android:textSize="24sp"
-                android:layout_alignParentBottom="true" />
+                android:elevation="0dp"
+                android:text="Сумма"
+                android:textSize="24sp" />
 
             <EditText
-                android:text="12345"
+                android:id="@+id/editText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2"
                 android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/textView2"
                 android:layout_toRightOf="@+id/textView2"
-                android:layout_toEndOf="@+id/textView2" />
+                android:text="12345" />
 
         </RelativeLayout>
 
@@ -145,13 +145,13 @@
             android:layout_weight="0.04">
 
             <TextView
-                android:text="Коментарии"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView5"
-                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Коментарии" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -159,27 +159,27 @@
             android:layout_height="155dp">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/editText3"
                     android:layout_width="157dp"
                     android:layout_height="98dp"
-                    android:inputType="textPersonName"
-                    android:text="44 1 ваш текс 1"
                     android:ems="10"
-                    android:id="@+id/editText3" />
+                    android:inputType="textPersonName"
+                    android:text="44 1 ваш текс 1" />
 
                 <Button
-                    android:text="Сохранить"
+                    android:id="@+id/Save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/Save"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:text="Сохранить" />
             </LinearLayout>
         </RelativeLayout>
 

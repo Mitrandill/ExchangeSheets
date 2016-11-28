@@ -9,12 +9,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="spreadsheet.exchangebook.SettingsActivity">
 
-    <TextView
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Какието настройки"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/NextButton" />
+
+    <TextView
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/WelcomeText" />
 </RelativeLayout>
