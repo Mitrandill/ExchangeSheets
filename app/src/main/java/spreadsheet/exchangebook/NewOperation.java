@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 public class NewOperation extends Activity {
 
+    DictionaryDBHelper db;
 
     public void selectCategory(View view) {
         Intent intent = new Intent(this, MainMenuActivity.class);
@@ -26,6 +27,7 @@ public class NewOperation extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = new DictionaryDBHelper(this);
         setContentView(R.layout.activity_new_operation);
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +88,14 @@ public class NewOperation extends Activity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
+
+        Button saveButton = (Button) findViewById(R.id.Save);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db.insertExcengeRecord(10, "UAH", 100, "EUR", "some now", "some_hash");
+            }
+        });
     }
 
 
@@ -108,6 +118,4 @@ public class NewOperation extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 }
