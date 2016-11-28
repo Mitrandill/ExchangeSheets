@@ -26,29 +26,6 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
 
-            <TextView
-                android:id="@+id/NEW"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/button"
-                android:layout_alignBottom="@+id/button"
-                android:layout_marginLeft="48dp"
-                android:layout_marginStart="48dp"
-                android:layout_toEndOf="@+id/button"
-                android:layout_toRightOf="@+id/button"
-                android:gravity="center"
-                android:text="@string/new_exchange"
-                android:textSize="24sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
-
             <Button
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"

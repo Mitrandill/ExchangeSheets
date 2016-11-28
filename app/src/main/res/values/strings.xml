@@ -13,4 +13,8 @@
     <string name="Back">Back</string>
     <string name="BackButton">Exit</string>
     <string name="new_exchange">New exchange</string>
+    <string name="currency">currency</string>
+    <string name="selection_menu">Selection menu</string>
+    <string name="view_operation">View Operation</string>
+    <string name="menu_authorization">Menu authorization</string>
 </resources>

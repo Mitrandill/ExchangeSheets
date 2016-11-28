@@ -61,6 +61,8 @@ public class MainMenuActivity extends Activity {
                 selectFirst(view);
             }
         });
+
+        this.setTitle(getString(R.string.selection_menu));
     }
 
 

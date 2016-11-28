@@ -29,7 +29,7 @@ public class NewOperation extends Activity {
                 selectCategory(view);
             }
         });
-
+        this.setTitle(R.string.new_exchange);
 
     }
     @Override

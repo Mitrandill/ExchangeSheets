@@ -30,6 +30,8 @@ public class FirstStepActivity extends Activity {
             }
         });
 
+        this.setTitle(getString(R.string.menu_authorization));
+
     }
 
     @Override
