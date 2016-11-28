@@ -17,10 +17,10 @@
         android:orientation="horizontal"
         android:weightSum="1">
     <TextView
+        android:id="@+id/from_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Исходная сумма"
-        android:id="@+id/from_text" />
+        android:text="Исходная сумма" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,12 +28,12 @@
         android:orientation="horizontal"
         android:weightSum="1">
     <EditText
+        android:id="@+id/initialAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
+        android:layout_marginTop="10dp"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_marginTop="10dp" />
+        android:inputType="numberSigned" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,30 +46,30 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
                 <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$"
                     android:id="@+id/from_dollar"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp" />
-                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EUR"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="$" />
+                <RadioButton
                     android:id="@+id/from_euro"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp" />
-                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UAH"
-                    android:id="@+id/from_uah"
                     android:layout_gravity="center_horizontal"
-                    android:checked="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp" />
+                    android:layout_marginRight="10dp"
+                    android:text="EUR" />
+                <RadioButton
+                    android:id="@+id/from_uah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:checked="true"
+                    android:text="UAH" />
         </RadioGroup>
 
 
@@ -78,14 +78,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:weightSum="1"
-        android:layout_marginTop="10dp">
+        android:weightSum="1">
         <TextView
+            android:id="@+id/to_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Результирующая сумма"
-            android:id="@+id/to_text" />
+            android:text="Результирующая сумма" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -93,11 +93,11 @@
         android:orientation="horizontal"
         android:weightSum="1">
         <EditText
+            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberSigned"
             android:ems="10"
-            android:id="@+id/editText"/>
+            android:inputType="numberSigned" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -110,30 +110,30 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$"
                 android:id="@+id/to_dollar"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EUR"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="$" />
+            <RadioButton
                 android:id="@+id/to_euro"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-            <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="UAH"
-                android:id="@+id/to_uah"
                 android:layout_gravity="center_horizontal"
-                android:checked="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:text="EUR" />
+            <RadioButton
+                android:id="@+id/to_uah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:checked="true"
+                android:text="UAH" />
         </RadioGroup>
     </RelativeLayout>
     <RelativeLayout
@@ -144,37 +144,37 @@
 
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
             android:layout_marginLeft="10dp"
-            android:layout_below="@+id/revert">
+            android:orientation="horizontal">
             <Button
+                android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Сохранить"
-            android:id="@+id/save"
-                android:layout_marginTop="20dp" /></LinearLayout>
+                android:layout_marginTop="20dp"
+                android:text="Сохранить" />
+        </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/linearLayout"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp">
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
             <Button
+                android:id="@+id/revert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Откатить последнюю"
-            android:id="@+id/revert"
-                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentTop="true"
+                android:text="Откатить последнюю" />
         </LinearLayout>
 
     </RelativeLayout>

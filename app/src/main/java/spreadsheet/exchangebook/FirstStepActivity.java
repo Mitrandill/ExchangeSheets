@@ -1,20 +1,15 @@
 package spreadsheet.exchangebook;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-//import android.net.Uri;
-//import android.view.Menu;
-//import android.view.MenuItem;
-
-
-public class SettingsActivity extends AppCompatActivity {
+public class FirstStepActivity extends Activity {
 
     static final String SubCategoryStateName = "category";
 
@@ -49,7 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.settings:
-                Intent intent = new Intent(this, SettingsActivity.class);
+                Intent intent = new Intent(this, FirstStepActivity.class);
                 this.startActivity(intent);
                 return true;
             default:
