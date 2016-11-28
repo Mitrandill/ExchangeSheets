@@ -10,4 +10,7 @@
     <string name="NextButton3">View Operation</string>
     <string name="WelcomeText1">Please click button for select ACT!</string>
     <string name="Hello">Hello Anatoly</string>
+    <string name="Back">Назад</string>
+    <string name="BackButton">Выход</string>
+    <string name="new_exchange">Новый обмен</string>
 </resources>

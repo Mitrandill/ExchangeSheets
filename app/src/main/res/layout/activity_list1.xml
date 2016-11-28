@@ -127,41 +127,41 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/Comm"
+        android:id="@+id/Commit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="53dp"
+        android:orientation="vertical"
         android:weightSum="1">
 
-        <LinearLayout
+        <TextView
             android:id="@+id/Commit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Комментарии :" />
+
+        <EditText
+            android:id="@+id/editText4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/Commit2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Комментарии :" />
-
-            <EditText
-                android:id="@+id/editText4"
-                android:layout_width="match_parent"
-                android:layout_height="158dp"
-                android:layout_below="@+id/linearLayout5"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="91dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Все что вы хотели сказать но боялись " />
-
-        </LinearLayout>
-
+            android:layout_below="@+id/linearLayout5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Все что вы хотели сказать но боялись " />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Back" />
 
 </RelativeLayout>

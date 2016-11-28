@@ -16,6 +16,15 @@ public class MainMenuActivity extends Activity {
         startActivity(intent);
     }
 
+    public void selectList(View view) {
+        Intent intent = new Intent(this, List1.class);
+        startActivity(intent);
+    }
+
+    public void selectFirst(View view) {
+        Intent intent = new Intent(this, FirstStepActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,6 +46,21 @@ public class MainMenuActivity extends Activity {
         });
 
 
+        Button buttonList1 = (Button) findViewById(R.id.button3);
+        buttonList1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectList(view);
+            }
+        });
+
+        Button buttonFirst = (Button) findViewById(R.id.button6);
+        buttonFirst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectFirst(view);
+            }
+        });
     }
 
 
