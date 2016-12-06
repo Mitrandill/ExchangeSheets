@@ -100,12 +100,14 @@ public class NewOperation extends Activity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String currentDate = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date());
-                db.insertExcengeRecord(Integer.parseInt(fromValue.getText().toString()) * 100,
-                        CurrencyNames[spinnerFrom.getSelectedItemPosition()],
-                        Integer.parseInt(toValue.getText().toString()) * 100,
-                        CurrencyNames[spinnerTo.getSelectedItemPosition()],
-                        currentDate, "some_hash");
+                Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
+                String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
+                Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
+                String strToValueCurrency =  CurrencyNames[spinnerTo.getSelectedItemPosition()];
+                db.insertExchangeRecordWithHash(intFromValue,
+                        strFromValueCurrency,
+                        intToValue,
+                        strToValueCurrency);
             }
         });
     }
