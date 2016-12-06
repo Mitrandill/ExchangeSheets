@@ -3,6 +3,7 @@ package spreadsheet.exchangebook;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -106,6 +107,32 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+    public ExchangeOperation getDataByPosition(int position){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery(
+                "select * from " +
+                        DATABASE_EXCHANGE +
+                        " order by " +
+                        DATABASE_CREATED +
+                        " limit 1 offset ?", new String[]{Integer.toString(position)}
+        );
+        if (res.moveToFirst()) {
+            ExchangeOperation result;
+
+            result = new ExchangeOperation(
+                    res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
+                    res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY)),
+                    res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
+                    res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY))
+            );
+
+            res.close();
+            return result;
+        }
+        res.close();
+        return null;
+    }
+
     public long insertExcengeRecord(int from_cents, String from_currency, int to_cents, String to_currency, String created, String hash_value) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -135,5 +162,11 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         }
         res.close();
         return "";
+    }
+
+    public int numberOfOperationsRows() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, DATABASE_EXCHANGE);
+        return numRows;
     }
 }
