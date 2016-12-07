@@ -6,17 +6,19 @@ package spreadsheet.exchangebook;
 
 public class ExchangeOperation {
 
-    public ExchangeOperation(Integer fromValue, String fromCurrency, Integer toValue, String toCurrency ) {
-        this.fromValue = fromValue;
-        this.fromCurrency = fromCurrency;
-        this.toValue = toValue;
-        this.toCurrency = toCurrency;
-    }
-
     private Integer fromValue;
     private String fromCurrency;
     private Integer toValue;
     private String toCurrency;
+    private String created;
+
+    public ExchangeOperation(Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created) {
+        this.fromValue = fromValue;
+        this.fromCurrency = fromCurrency;
+        this.toValue = toValue;
+        this.toCurrency = toCurrency;
+        this.created = created;
+    }
 
     public Integer getFromValue() {
         return fromValue;
@@ -48,5 +50,13 @@ public class ExchangeOperation {
 
     public void setToCurrency(String toCurrency) {
         this.toCurrency = toCurrency;
+    }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public void setCreated(String created) {
+        this.created = created;
     }
 }

@@ -41,11 +41,13 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         final  TextView fromCurrency = holder.fromCurrency;
         final  TextView toValue = holder.toValue;
         final  TextView toCurrency = holder.toCurrency;
+        final TextView datecurency = holder.created;
 
         holder.fromValue.setText(el.getFromValue().toString());
         holder.fromCurrency.setText(el.getFromCurrency());
         holder.toValue.setText(el.getToValue().toString());
         holder.toCurrency.setText(el.getToCurrency());
+        holder.created.setText(el.getCreated().toString());
     }
 
     @Override
@@ -60,6 +62,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         public TextView fromCurrency;
         public TextView toValue;
         public TextView toCurrency;
+        public TextView created;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
@@ -67,6 +70,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
             fromCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_fromcurrency);
             toValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_tovalue);
             toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
+            created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="80dp"
+    android:layout_height="120dp"
     android:background="@android:drawable/picture_frame"
     android:backgroundTintMode="multiply"
     android:focusable="true"
@@ -67,5 +67,14 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="22dp"
         android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/layout_item_datecurency"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/layout_item_from"
+        android:text="@+id/layout_item_datecurency"
+        android:textSize="20sp" />
 
 </RelativeLayout>
