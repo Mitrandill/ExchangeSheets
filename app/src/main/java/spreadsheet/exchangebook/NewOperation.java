@@ -15,9 +15,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class NewOperation extends Activity {
 
     DictionaryDBHelper db;
@@ -95,6 +92,12 @@ public class NewOperation extends Activity {
 
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
+        final EditText comment = (EditText) findViewById(R.id.amountValue3);
+        fromValue.setText("");
+        toValue.setText("");
+        comment.setText("");
+
+
 
         Button saveButton = (Button) findViewById(R.id.Save);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +133,8 @@ public class NewOperation extends Activity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+
+
         }
     }
 }

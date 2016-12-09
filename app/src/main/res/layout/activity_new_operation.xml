@@ -150,7 +150,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/amountValue3"
                     android:layout_width="157dp"
                     android:layout_height="98dp"
                     android:ems="10"

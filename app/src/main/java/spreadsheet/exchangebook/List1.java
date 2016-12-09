@@ -48,5 +48,10 @@ public class List1 extends Activity {
 
         this.setTitle(getString(R.string.view_operation));
 
+
     }
+
+
 }
+
+
