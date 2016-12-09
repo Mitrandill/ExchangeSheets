@@ -8,6 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by mixail on 12/6/16.
  */
@@ -73,12 +78,23 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
             }
         });
 
+        DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        Date date = null;
+        try {
+            date = formatFrom.parse(el.getCreated());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        DateFormat formatTo = new SimpleDateFormat("dd MMM yyyy HH:mm");
 
         holder.fromValue.setText(el.getFromValue().toString());
         holder.fromCurrency.setText(el.getFromCurrency());
         holder.toValue.setText(el.getToValue().toString());
         holder.toCurrency.setText(el.getToCurrency());
-        holder.created.setText(el.getCreated().toString());
+        holder.created.setText(formatTo.format(date));
+        //created.setText(el.getCreated().toString());
+
     }
 
     @Override
