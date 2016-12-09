@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Youroperation extends Activity {
 
     DictionaryDBHelper db;
@@ -30,8 +35,18 @@ public class Youroperation extends Activity {
         TextView fromvalue = (TextView) findViewById(R.id.youroperation_from_value);
         fromvalue.setText(Float.toString(el.getFromValue() / 100));
 
+        DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        Date date = null;
+        try {
+            date = formatFrom.parse(el.getCreated());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        DateFormat formatTo = new SimpleDateFormat("dd MMM yyyy HH:mm");
+
         TextView created = (TextView) findViewById(R.id.youroperation_date);
-        created.setText(el.getCreated());
+        created.setText(formatTo.format(date));
 
         TextView tovalue = (TextView) findViewById(R.id.youroperation_to_value);
         tovalue.setText(Float.toString(el.getToValue() / 100));

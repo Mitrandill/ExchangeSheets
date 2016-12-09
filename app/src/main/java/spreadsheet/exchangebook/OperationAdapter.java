@@ -104,6 +104,8 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
             toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
             created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
             txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.button2);
+
+
         }
 
 

@@ -57,7 +57,7 @@
         <TextView
             android:id="@+id/textView10"
             android:layout_width="154dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Сумма"
             android:textSize="24sp" />
 
@@ -96,9 +96,8 @@
 
         <TextView
             android:id="@+id/youroperation_to_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.12"
+            android:layout_width="98dp"
+            android:layout_height="match_parent"
             android:text="12345.6"
             android:textSize="24sp" />
 
@@ -145,6 +144,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="83dp"
-        android:text="Button" />
+        android:text="@string/Back" />
 
 </RelativeLayout>
