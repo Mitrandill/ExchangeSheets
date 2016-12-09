@@ -1,0 +1,60 @@
+package spreadsheet.exchangebook;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Youroperation extends Activity {
+
+    DictionaryDBHelper db;
+
+
+    public void selectCategory(View view) {
+        Intent intent = new Intent(this, List1.class);
+        startActivity(intent);
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_youroperation);
+        Intent intent = getIntent();
+        Integer id = intent.getIntExtra("id", 0);
+        db = new DictionaryDBHelper(this);
+        ExchangeOperation el = db.getDataByPosition(id);
+
+        TextView fromvalue = (TextView) findViewById(R.id.youroperation_from_value);
+        fromvalue.setText(Float.toString(el.getFromValue() / 100));
+
+        TextView created = (TextView) findViewById(R.id.youroperation_date);
+        created.setText(el.getCreated());
+
+        TextView tovalue = (TextView) findViewById(R.id.youroperation_to_value);
+        tovalue.setText(Float.toString(el.getToValue() / 100));
+
+        TextView fromcurrency = (TextView) findViewById(R.id.youroperation_from_value_currency);
+        fromcurrency.setText(el.getFromCurrency());
+
+        TextView tocurrency = (TextView) findViewById(R.id.youroperation_to_value_currency);
+        tocurrency.setText(el.getToCurrency());
+
+
+        Button button = (Button) findViewById(R.id.youroperation_back);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectCategory(view);
+            }
+        });
+
+        this.setTitle(getString(R.string.view_operation) + id.toString());
+    }
+
+
+}
+
+

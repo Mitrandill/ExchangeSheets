@@ -18,6 +18,7 @@ public class List1 extends Activity {
         startActivity(intent);
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class List1 extends Activity {
                 selectCategory(view);
             }
         });
+
 
         this.setTitle(getString(R.string.view_operation));
 

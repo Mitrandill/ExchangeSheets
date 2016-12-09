@@ -18,4 +18,7 @@
     <string name="selection_menu">"Меню "</string>
     <string name="view_operation">Новая Операция</string>
     <string name="menu_authorization">Авторизация</string>
+    <string name="layout_item_button2">Просмотр</string>
+    <string name="title_activity_list2">Лист2</string>
+    <string name="View">Просмотр</string>
 </resources>

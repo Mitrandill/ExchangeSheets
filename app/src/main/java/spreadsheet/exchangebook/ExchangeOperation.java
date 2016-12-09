@@ -6,13 +6,15 @@ package spreadsheet.exchangebook;
 
 public class ExchangeOperation {
 
+    private Integer id;
     private Integer fromValue;
     private String fromCurrency;
     private Integer toValue;
     private String toCurrency;
     private String created;
 
-    public ExchangeOperation(Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created) {
+    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created) {
+        this.id = id;
         this.fromValue = fromValue;
         this.fromCurrency = fromCurrency;
         this.toValue = toValue;
@@ -58,5 +60,13 @@ public class ExchangeOperation {
 
     public void setCreated(String created) {
         this.created = created;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

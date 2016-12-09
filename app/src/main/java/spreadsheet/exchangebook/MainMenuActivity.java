@@ -26,6 +26,7 @@ public class MainMenuActivity extends Activity {
         startActivity(intent);
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -61,6 +62,7 @@ public class MainMenuActivity extends Activity {
                 selectFirst(view);
             }
         });
+
 
         this.setTitle(getString(R.string.selection_menu));
     }

@@ -118,6 +118,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
             ExchangeOperation result;
 
             result = new ExchangeOperation(
+                    res.getInt(res.getColumnIndex(DATABASE_ID)),
                     res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY)),
                     res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
@@ -147,9 +148,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
 
     public long insertExchangeRecordWithHash(int from_cents, String from_currency, int to_cents, String to_currency) {
         String created = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date());
-        //String created = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ".format(new Date());
-        //Date date = format.parse(string);
-        //formatter.setTimeZone(TimeZone.getTimeZone("GMT+2"));
+
 
         String hash_value = SHA1(this.lastHash() + created + ":" + Integer.toString(from_cents) + ">" + from_currency + "<" + Integer.toString(to_cents) + ":" + to_currency);
         return this.insertExcengeRecord(from_cents, from_currency, to_cents, to_currency, created, hash_value);

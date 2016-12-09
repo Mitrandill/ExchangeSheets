@@ -17,4 +17,6 @@
     <string name="selection_menu">Selection menu</string>
     <string name="view_operation">View Operation</string>
     <string name="menu_authorization">Menu authorization</string>
+    <string name="title_activity_list2">List2</string>
+    <string name="View">View</string>
 </resources>
