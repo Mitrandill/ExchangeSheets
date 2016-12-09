@@ -121,8 +121,36 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
                     res.getInt(res.getColumnIndex(DATABASE_ID)),
                     res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY)),
+                    res.getInt(res.getColumnIndex(DATABASE_TO_CENTS)),
+                    res.getString(res.getColumnIndex(DATABASE_TO_CURRENCY)),
+                    res.getString(res.getColumnIndex(DATABASE_CREATED))
+            );
+
+            res.close();
+            return result;
+        }
+        res.close();
+        return null;
+    }
+
+    public ExchangeOperation getDataById(int position) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery(
+                "select * from " +
+                        DATABASE_EXCHANGE +
+                        " where " +
+                        DATABASE_ID +
+                        " = ?", new String[]{Integer.toString(position)}
+        );
+        if (res.moveToFirst()) {
+            ExchangeOperation result;
+
+            result = new ExchangeOperation(
+                    res.getInt(res.getColumnIndex(DATABASE_ID)),
                     res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY)),
+                    res.getInt(res.getColumnIndex(DATABASE_TO_CENTS)),
+                    res.getString(res.getColumnIndex(DATABASE_TO_CURRENCY)),
                     res.getString(res.getColumnIndex(DATABASE_CREATED))
             );
 

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -69,9 +70,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
 
 
         final Integer selected = el.getId();
-        final TextView forClick = holder.txtViewTitle;
-        holder.txtViewTitle.setText(el.getFromCurrency());
-        holder.txtViewTitle.setOnClickListener(new View.OnClickListener() {
+        holder.itemcontainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 selectSubCategory(selected);
@@ -88,12 +87,11 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
 
         DateFormat formatTo = new SimpleDateFormat("dd MMM yyyy HH:mm");
 
-        holder.fromValue.setText(el.getFromValue().toString());
+        holder.fromValue.setText(Float.toString(el.getFromValue() / 100));
         holder.fromCurrency.setText(el.getFromCurrency());
-        holder.toValue.setText(el.getToValue().toString());
+        holder.toValue.setText(Float.toString(el.getToValue() / 100));
         holder.toCurrency.setText(el.getToCurrency());
         holder.created.setText(formatTo.format(date));
-        //created.setText(el.getCreated().toString());
 
     }
 
@@ -110,7 +108,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         public TextView toValue;
         public TextView toCurrency;
         public TextView created;
-        public TextView txtViewTitle;
+        public RelativeLayout itemcontainer;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
@@ -119,7 +117,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
             toValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_tovalue);
             toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
             created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
-            txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.button2);
+            itemcontainer = (RelativeLayout) itemLayoutView.findViewById(R.id.layout_item_container);
 
 
         }

@@ -30,7 +30,7 @@ public class Youroperation extends Activity {
         Intent intent = getIntent();
         Integer id = intent.getIntExtra("id", 0);
         db = new DictionaryDBHelper(this);
-        ExchangeOperation el = db.getDataByPosition(id);
+        ExchangeOperation el = db.getDataById(id);
 
         TextView fromvalue = (TextView) findViewById(R.id.youroperation_from_value);
         fromvalue.setText(Float.toString(el.getFromValue() / 100));
