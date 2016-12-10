@@ -21,4 +21,5 @@
     <string name="layout_item_button2">Просмотр</string>
     <string name="title_activity_list2">Лист2</string>
     <string name="View">Просмотр</string>
+    <string name="Comment">Комментарии</string>
 </resources>

@@ -69,6 +69,7 @@
             android:layout_weight="0.08">
 
             <EditText
+
                 android:id="@+id/amountValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,13 +118,14 @@
                 android:layout_alignParentBottom="true" />
 
             <EditText
+
                 android:id="@+id/amountValue2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12345"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/textView2"
-                android:layout_toEndOf="@+id/textView2" />
+                android:layout_toEndOf="@+id/textView2"  />
             <!--
                         <Spinner
                             android:id="@+id/spinner2"
@@ -167,6 +169,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:background="@drawable/edittextstyle"
                     android:id="@+id/amountValue3"
                     android:layout_width="157dp"
                     android:layout_height="98dp"

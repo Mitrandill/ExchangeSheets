@@ -19,4 +19,6 @@
     <string name="menu_authorization">Menu authorization</string>
     <string name="title_activity_list2">List2</string>
     <string name="View">View</string>
+    <string name="Comment">Comment</string>
+
 </resources>
