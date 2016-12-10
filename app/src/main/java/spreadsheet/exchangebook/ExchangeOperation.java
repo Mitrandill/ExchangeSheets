@@ -10,16 +10,16 @@ public class ExchangeOperation {
     private Integer fromValue;
     private String fromCurrency;
     private Integer toValue;
-    private String toCurrency;
+   // private String toCurrency;
     private String created;
     private String comment;
 
-    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created, String comment) {
+    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String created, String comment) {
         this.id = id;
         this.fromValue = fromValue;
         this.fromCurrency = fromCurrency;
         this.toValue = toValue;
-        this.toCurrency = toCurrency;
+      //  this.toCurrency = toCurrency;
         this.created = created;
         this.comment = comment;
     }
@@ -48,13 +48,9 @@ public class ExchangeOperation {
         this.toValue = toValue;
     }
 
-    public String getToCurrency() {
-        return toCurrency;
-    }
+  //  public String getToCurrency() { return toCurrency; }
 
-    public void setToCurrency(String toCurrency) {
-        this.toCurrency = toCurrency;
-    }
+  //  public void setToCurrency(String toCurrency) {this.toCurrency = toCurrency; }
 
     public String getCreated() {
         return created;

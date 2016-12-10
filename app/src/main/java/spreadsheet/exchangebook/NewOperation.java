@@ -70,7 +70,7 @@ public class NewOperation extends Activity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
+  /*      final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
         spinnerTo.setAdapter(adapter);
         // заголовок
         spinnerTo.setPrompt("To Currency");
@@ -89,7 +89,7 @@ public class NewOperation extends Activity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
-
+*/
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
         final EditText comment = (EditText) findViewById(R.id.amountValue3);
@@ -106,12 +106,12 @@ public class NewOperation extends Activity {
                 Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
                 String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
                 Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
-                String strToValueCurrency =  CurrencyNames[spinnerTo.getSelectedItemPosition()];
+          //      String strToValueCurrency =  CurrencyNames[spinnerTo.getSelectedItemPosition()];
                 String strComment = comment.getText().toString();
                 db.insertExchangeRecordWithHash(intFromValue,
                         strFromValueCurrency,
                         intToValue,
-                        strToValueCurrency,
+          //              strToValueCurrency,
                         strComment);
             }
         });

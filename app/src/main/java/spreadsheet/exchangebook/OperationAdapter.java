@@ -65,7 +65,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         final TextView fromValue = holder.fromValue;
         final TextView fromCurrency = holder.fromCurrency;
         final TextView toValue = holder.toValue;
-        final TextView toCurrency = holder.toCurrency;
+     //   final TextView toCurrency = holder.toCurrency;
         final TextView datecurency = holder.created;
 
 
@@ -90,7 +90,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         holder.fromValue.setText(Float.toString(el.getFromValue() / 100));
         holder.fromCurrency.setText(el.getFromCurrency());
         holder.toValue.setText(Float.toString(el.getToValue() / 100));
-        holder.toCurrency.setText(el.getToCurrency());
+      //  holder.toCurrency.setText(el.getToCurrency());
         holder.created.setText(formatTo.format(date));
 
     }
@@ -106,7 +106,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         public TextView fromValue;
         public TextView fromCurrency;
         public TextView toValue;
-        public TextView toCurrency;
+     //   public TextView toCurrency;
         public TextView created;
         public RelativeLayout itemcontainer;
 
@@ -115,7 +115,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
             fromValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_from);
             fromCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_fromcurrency);
             toValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_tovalue);
-            toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
+        //    toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
             created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
             itemcontainer = (RelativeLayout) itemLayoutView.findViewById(R.id.layout_item_container);
 
