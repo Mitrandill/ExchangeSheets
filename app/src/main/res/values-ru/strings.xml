@@ -22,4 +22,12 @@
     <string name="title_activity_list2">Лист2</string>
     <string name="View">Просмотр</string>
     <string name="Comment">Комментарии</string>
+    <string name="DATE_TIME">Дата Время</string>
+    <string name="item_layout_date">Дата</string>
+    <string name="Date">Дата</string>
+    <string name="twocurrency">ВАЛЮТА</string>
+    <string name="sum">Сумма</string>
+    <string name="ГРИВНА">Гривна</string>
+    <string name="twocourse">КУРС</string>
+    <string name="UAH">Гривна</string>
 </resources>

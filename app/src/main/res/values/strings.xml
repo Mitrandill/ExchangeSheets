@@ -20,5 +20,10 @@
     <string name="title_activity_list2">List2</string>
     <string name="View">View</string>
     <string name="Comment">Comment</string>
-
+    <string name="DATE_TIME">Date Time</string>
+    <string name="Date">Date</string>
+    <string name="twocurrency">CURRENCY</string>
+    <string name="sum">SUM</string>
+    <string name="twocourse">COURSE</string>
+    <string name="UAH">UAH</string>
 </resources>

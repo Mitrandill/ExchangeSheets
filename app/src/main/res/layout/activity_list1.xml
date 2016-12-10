@@ -10,6 +10,92 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="spreadsheet.exchangebook.List1">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/item_layout_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Date" />
+
+            <TextView
+                android:id="@+id/item_layout_date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.07"
+                android:text="12 ltrf,hz 2016" />
+
+            <Spinner
+                android:id="@+id/item_layout_spinner3"
+                android:layout_width="58dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.58" />
+
+            <Spinner
+                android:id="@+id/item_layout_spinner4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/item_layout_date2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.23"
+                android:text="@string/DATE_TIME"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_layout_2currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.28"
+                android:text="@string/twocurrency"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_layout_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.36"
+                android:text="@string/sum"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_layout_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16"
+                android:text="@string/twocourse"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/item_layout_UAH"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:text="@string/UAH" />
+        </LinearLayout>
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/OperationsList"
         android:layout_width="fill_parent"
@@ -17,7 +103,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:orientation="vertical" />
+        android:layout_marginTop="83dp"
+        android:orientation="vertical">
+
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/button4"
