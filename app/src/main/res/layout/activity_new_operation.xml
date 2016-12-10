@@ -26,7 +26,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
 
-            <Button
+            <RadioButton
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,14 +36,30 @@
                 android:layout_marginRight="44dp"
                 android:text="Продажа" />
 
-            <Button
+            <TextView
+                android:text="Операция"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView4"
+                android:layout_alignBottom="@+id/button7"
+                android:layout_toLeftOf="@+id/button7"
+                android:layout_toStartOf="@+id/button7"
+                android:textSize="24sp"/>
+
+            <RadioButton
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:text="Покупка"
+                android:layout_marginRight="11dp"
+                android:layout_marginEnd="11dp"
                 android:layout_alignParentTop="true"
-                android:text="Покупка" />
+                android:layout_toLeftOf="@+id/button5"
+                android:layout_toStartOf="@+id/button5" />
+
 
         </RelativeLayout>
 
@@ -70,7 +86,7 @@
                 android:layout_alignParentStart="true"
                 android:width="100dp"
                 android:elevation="0dp"
-                android:text="Сумма"
+                android:text="Валюта"
                 android:textSize="24sp" />
 
             <Spinner
@@ -93,33 +109,34 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:width="100dp"
                 android:elevation="0dp"
-                android:text="Сумма"
-                android:textSize="24sp" />
+                android:text="Гривна"
+                android:textSize="24sp"
+                android:layout_alignTop="@+id/amountValue2"
+                android:layout_alignParentBottom="true" />
 
             <EditText
                 android:id="@+id/amountValue2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/textView2"
+                android:text="12345"
+                android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/textView2"
-                android:text="12345" />
-
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignBaseline="@+id/amountValue2"
-                android:layout_alignBottom="@+id/amountValue2"
-                android:layout_toEndOf="@+id/amountValue2"
-                android:layout_toRightOf="@+id/amountValue2"
-                android:width="50dp"
-                android:contextClickable="true"
-                android:gravity="right|start" />
-
+                android:layout_toEndOf="@+id/textView2" />
+            <!--
+                        <Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignBaseline="@+id/amountValue2"
+                            android:layout_alignBottom="@+id/amountValue2"
+                            android:layout_toEndOf="@+id/amountValue2"
+                            android:layout_toRightOf="@+id/amountValue2"
+                            android:width="50dp"
+                            android:contextClickable="true"
+                            android:gravity="right|start" />
+            -->
         </RelativeLayout>
 
         <RelativeLayout
