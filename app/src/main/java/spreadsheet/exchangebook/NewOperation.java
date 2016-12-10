@@ -12,12 +12,16 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewOperation extends Activity {
 
     DictionaryDBHelper db;
+    private TextView mLabel;
+
 
     public void selectCategory(View view) {
         Intent intent = new Intent(this, MainMenuActivity.class);
@@ -66,11 +70,11 @@ public class NewOperation extends Activity {
         });
 
 
-        // адаптер
+  /*      // адаптер
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-  /*      final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
+        final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
         spinnerTo.setAdapter(adapter);
         // заголовок
         spinnerTo.setPrompt("To Currency");
@@ -89,7 +93,29 @@ public class NewOperation extends Activity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
+
 */
+
+
+        final RadioButton radio1 = (RadioButton) findViewById(R.id.button5_sale);
+        final RadioButton radio2 = (RadioButton) findViewById(R.id.button7_purchase);
+
+        mLabel = (TextView) findViewById(R.id.text);
+
+        radio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+        radio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
         final EditText comment = (EditText) findViewById(R.id.amountValue3);
