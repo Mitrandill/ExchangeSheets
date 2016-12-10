@@ -57,6 +57,8 @@ public class Youroperation extends Activity {
         TextView tocurrency = (TextView) findViewById(R.id.youroperation_to_value_currency);
         tocurrency.setText(el.getToCurrency());
 
+        TextView comment = (TextView) findViewById(R.id.youroperation_to_value_comment);
+        comment.setText(el.getComment());
 
         Button button = (Button) findViewById(R.id.youroperation_back);
         button.setOnClickListener(new View.OnClickListener() {

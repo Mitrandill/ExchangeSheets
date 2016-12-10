@@ -107,10 +107,12 @@ public class NewOperation extends Activity {
                 String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
                 Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
                 String strToValueCurrency =  CurrencyNames[spinnerTo.getSelectedItemPosition()];
+                String strComment = comment.getText().toString();
                 db.insertExchangeRecordWithHash(intFromValue,
                         strFromValueCurrency,
                         intToValue,
-                        strToValueCurrency);
+                        strToValueCurrency,
+                        strComment);
             }
         });
     }

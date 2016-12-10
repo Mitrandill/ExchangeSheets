@@ -12,14 +12,16 @@ public class ExchangeOperation {
     private Integer toValue;
     private String toCurrency;
     private String created;
+    private String comment;
 
-    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created) {
+    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created, String comment) {
         this.id = id;
         this.fromValue = fromValue;
         this.fromCurrency = fromCurrency;
         this.toValue = toValue;
         this.toCurrency = toCurrency;
         this.created = created;
+        this.comment = comment;
     }
 
     public Integer getFromValue() {
@@ -68,5 +70,13 @@ public class ExchangeOperation {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

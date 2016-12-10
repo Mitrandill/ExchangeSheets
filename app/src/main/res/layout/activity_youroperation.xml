@@ -91,7 +91,7 @@
             android:id="@+id/textView11"
             android:layout_width="156dp"
             android:layout_height="wrap_content"
-            android:text="Сумма"
+            android:text="Гривна"
             android:textSize="24sp" />
 
         <TextView
@@ -110,23 +110,31 @@
             android:textSize="18sp" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/youroperation_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="83dp"
+        android:text="@string/Back" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/youroperation_back"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="140dp"
         android:orientation="vertical"
         android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Комментарии :" />
 
         <TextView
-            android:id="@+id/editText4"
+            android:id="@+id/youroperation_to_value_comment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/linearLayout5"
@@ -136,14 +144,5 @@
             android:inputType="textPersonName"
             android:text="Все что вы хотели сказать но боялись " />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/youroperation_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="83dp"
-        android:text="@string/Back" />
 
 </RelativeLayout>
