@@ -68,7 +68,6 @@
                 android:id="@+id/item_layout_2currency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.28"
                 android:text="@string/twocurrency"
                 android:textSize="16sp" />
 
