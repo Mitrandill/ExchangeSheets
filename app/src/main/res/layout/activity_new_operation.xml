@@ -26,38 +26,28 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
 
-            <RadioButton
-                android:id="@+id/button5_sale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="44dp"
-                android:layout_marginRight="44dp"
-                android:text="Продажа" />
-
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/button7"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/button7"
-                android:layout_toStartOf="@+id/button7"
                 android:text="Операция"
                 android:textSize="24sp"/>
 
-            <RadioButton
-                android:id="@+id/button7_purchase"
+            <Spinner
+                android:id="@+id/spinner2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/textView4"
-                android:layout_alignBottom="@+id/textView4"
-                android:layout_toLeftOf="@+id/button5_sale"
-                android:layout_toStartOf="@+id/button5_sale"
-                android:text="Покупка" />
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="61dp"
+                android:layout_marginStart="61dp"
+                android:layout_toEndOf="@+id/textView4"
+                android:layout_toRightOf="@+id/textView4"
+                android:width="50dp"
+                android:contextClickable="true"
+                android:gravity="right|start" />
 
 
         </RelativeLayout>
@@ -125,19 +115,7 @@
                 android:layout_toEndOf="@+id/textView2"
                 android:layout_toRightOf="@+id/textView2"
                 android:text="12345" />
-            <!--
-                        <Spinner
-                            android:id="@+id/spinner2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_alignBaseline="@+id/amountValue2"
-                            android:layout_alignBottom="@+id/amountValue2"
-                            android:layout_toEndOf="@+id/amountValue2"
-                            android:layout_toRightOf="@+id/amountValue2"
-                            android:width="50dp"
-                            android:contextClickable="true"
-                            android:gravity="right|start" />
-            -->
+
         </RelativeLayout>
 
         <RelativeLayout

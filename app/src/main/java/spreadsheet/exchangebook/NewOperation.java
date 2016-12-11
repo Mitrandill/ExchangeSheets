@@ -12,15 +12,13 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewOperation extends Activity {
 
     DictionaryDBHelper db;
-    private TextView mLabel;
+    //private TextView mLabel;
 
 
     public void selectCategory(View view) {
@@ -43,8 +41,10 @@ public class NewOperation extends Activity {
         });
         this.setTitle(R.string.new_exchange);
 
+        //   if (true){
         //адаптер
         final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN"};
+
         // адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -70,23 +70,25 @@ public class NewOperation extends Activity {
         });
 
 
-  /*      // адаптер
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        final String[] CurrencyOperation = {"Покупка", "Продажа"};
+        // адаптер
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
-        spinnerTo.setAdapter(adapter);
+        spinnerTo.setAdapter(adapter2);
         // заголовок
         spinnerTo.setPrompt("To Currency");
         // выделяем элемент
-        spinnerTo.setSelection(2);
+        spinnerTo.setSelection(1);
         // устанавливаем обработчик нажатия
-        spinnerTo.setOnItemSelectedListener(new OnItemSelectedListener() {
+       /* spinnerTo.setOnItemSelectedListener(new OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 // показываем позиция нажатого элемента
-                Toast.makeText(getBaseContext(), "To Currency = " + CurrencyNames[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "From Currency = " + CurrencyOperation[position], Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -96,7 +98,7 @@ public class NewOperation extends Activity {
 
 */
 
-
+ /*
         final RadioButton radio1 = (RadioButton) findViewById(R.id.button5_sale);
         final RadioButton radio2 = (RadioButton) findViewById(R.id.button7_purchase);
 
@@ -114,7 +116,7 @@ public class NewOperation extends Activity {
             }
         });
 
-
+*/
 
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
@@ -132,12 +134,12 @@ public class NewOperation extends Activity {
                 Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
                 String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
                 Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
-          //      String strToValueCurrency =  CurrencyNames[spinnerTo.getSelectedItemPosition()];
+                String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
                 String strComment = comment.getText().toString();
                 db.insertExchangeRecordWithHash(intFromValue,
                         strFromValueCurrency,
                         intToValue,
-          //              strToValueCurrency,
+                        strToValueCurrency,
                         strComment);
             }
         });
