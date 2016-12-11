@@ -34,6 +34,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
     public void selectSubCategory(Integer id) {
         Intent intent = new Intent(this.parent, Youroperation.class);
         intent.putExtra("id", id);
+        //      intent.putExtra("date", date);
         this.parent.startActivity(intent);
 
 
@@ -60,7 +61,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ExchangeOperation el = db.getDataByPosition(position);
+        ExchangeOperation el = db.getDataByPosition(position, "date");
 
         final TextView fromValue = holder.fromValue;
         final TextView fromCurrency = holder.fromCurrency;
@@ -76,6 +77,15 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
                 selectSubCategory(selected);
             }
         });
+/*
+        final Integer selected = el.getToCurrency();
+        holder.itemcontainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectSubCategory(selected);
+            }
+        });
+  */
 
         DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         Date date = null;

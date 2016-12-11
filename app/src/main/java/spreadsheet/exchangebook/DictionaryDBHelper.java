@@ -107,15 +107,23 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public ExchangeOperation getDataByPosition(int position){
+    public ExchangeOperation getDataByPosition(int position, String order_by) {
         SQLiteDatabase db = this.getReadableDatabase();
+        String order = "";
+        if (order_by.equals("date")) {
+            order = DATABASE_CREATED;
+        } else if (order_by.equals("from")) {
+            order = DATABASE_FROM_CURRENCY;
+        } else if (order_by.equals("to")) {
+            order = DATABASE_TO_CURRENCY;
+        }
         Cursor res = db.rawQuery(
                 "select * from " +
                         DATABASE_EXCHANGE +
                         " order by " +
-                        DATABASE_CREATED +
-                        " limit 1 offset ?", new String[]{Integer.toString(position)}
-        );
+                        order +
+                        " limit 1 offset ?", new String[]{Integer.toString(position)});
+
         if (res.moveToFirst()) {
             ExchangeOperation result;
 
