@@ -34,19 +34,34 @@
                 android:id="@+id/item_layout_date2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.07"
                 android:text="12 ltrf,hz 2016" />
 
             <Spinner
-                android:id="@+id/item_layout_spinner3"
-                android:layout_width="58dp"
+
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.58" />
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="61dp"
+                android:layout_marginStart="61dp"
+                android:layout_toEndOf="@+id/textView4"
+                android:layout_toRightOf="@+id/textView4"
+                android:layout_weight="0.55"
+                android:width="50dp"
+                android:contextClickable="true"
+                android:gravity="right|start" />
+
 
             <Spinner
-                android:id="@+id/item_layout_spinner4"
+                android:id="@+id/spinner2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:layout_alignBaseline="@+id/amountValue"
+                android:layout_alignBottom="@+id/amountValue"
+                android:layout_toEndOf="@+id/amountValue"
+                android:layout_toRightOf="@+id/amountValue"
+                android:width="50dp"
+                android:contextClickable="true" />
 
         </LinearLayout>
 

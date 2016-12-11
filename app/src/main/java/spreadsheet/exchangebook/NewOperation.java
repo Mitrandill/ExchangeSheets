@@ -18,7 +18,6 @@ import android.widget.Toast;
 public class NewOperation extends Activity {
 
     DictionaryDBHelper db;
-    //private TextView mLabel;
 
 
     public void selectCategory(View view) {
@@ -41,7 +40,7 @@ public class NewOperation extends Activity {
         });
         this.setTitle(R.string.new_exchange);
 
-        //   if (true){
+
         //адаптер
         final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN"};
 
@@ -98,25 +97,7 @@ public class NewOperation extends Activity {
 
 */
 
- /*
-        final RadioButton radio1 = (RadioButton) findViewById(R.id.button5_sale);
-        final RadioButton radio2 = (RadioButton) findViewById(R.id.button7_purchase);
 
-        mLabel = (TextView) findViewById(R.id.text);
-
-        radio1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-        radio2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-*/
 
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
