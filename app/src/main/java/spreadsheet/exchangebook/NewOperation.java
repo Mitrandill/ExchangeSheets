@@ -3,6 +3,8 @@ package spreadsheet.exchangebook;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,48 +20,47 @@ import android.widget.Toast;
 
 public class NewOperation extends Activity {
 
+    EditText fromValue;
+    EditText toValue;
     DictionaryDBHelper db;
-    private EditText et1, et2;
+    Button saveButton;
 
+
+    private TextWatcher mTextWacher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            checkFieldsForEmpyValues();
+        }
+    };
 
     public void selectCategory(View view) {
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
     }
 
-    /*
-        private TextWatcher mTextWacher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2,int i3) {
+    void checkFieldsForEmpyValues() {
 
-            }
+        String fromText = fromValue.getText().toString();
+        String toText = toValue.getText().toString();
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2,int i3) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                checkFieldsForEmpyValues();
-            }
-        };
-
-        void checkFieldsForEmpyValues(){
-
-            Button Save = (Button) findViewById(R.id.Save);
-
-            String s1 = et1.getText().toString();
-            String s2 = et2.getText().toString();
-
-            if(s1.equals("") || s2.equals("")) {
-                Save.setEnabled(false);
-            } else {
-                Save.setEnabled(true);
-            }
-
+        if (fromText.equals("") || toText.equals("")) {
+            saveButton.setEnabled(false);
+        } else {
+            saveButton.setEnabled(true);
         }
-    */
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,9 +116,8 @@ public class NewOperation extends Activity {
         spinnerTo.setSelection(1);
 
 
-
-        final EditText fromValue = (EditText) findViewById(R.id.amountValue);
-        final EditText toValue = (EditText) findViewById(R.id.amountValue2);
+        fromValue = (EditText) findViewById(R.id.amountValue);
+        toValue = (EditText) findViewById(R.id.amountValue2);
         final EditText comment = (EditText) findViewById(R.id.amountValue3);
         final Button Save = (Button) findViewById(R.id.Save);
 
@@ -125,50 +125,37 @@ public class NewOperation extends Activity {
         toValue.setText("");
         comment.setText("");
 
-        et1 = (EditText) findViewById(R.id.amountValue);
-        et2 = (EditText) findViewById(R.id.amountValue2);
-
-
-
-
-
-/*
-
-        et1.addTextChangedListener(mTextWacher);
-        et2.addTextChangedListener(mTextWacher);
-
+        fromValue.addTextChangedListener(mTextWacher);
+        toValue.addTextChangedListener(mTextWacher);
 
         checkFieldsForEmpyValues();
 
-*/
-        Button saveButton = (Button) findViewById(R.id.Save);
+        saveButton = (Button) findViewById(R.id.Save);
         saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
-                String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
-                Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
-                String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
-                String strComment = comment.getText().toString();
-                db.insertExchangeRecordWithHash(intFromValue,
-                        strFromValueCurrency,
-                        intToValue,
-                        strToValueCurrency,
-                        strComment);
-                Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
-                fromValue.setText("");
-                toValue.setText("");
-                comment.setText("");
+                                          @Override
+                                          public void onClick(View view) {
+                                              Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
+                                              String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
+                                              Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
+                                              String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
+                                              String strComment = comment.getText().toString();
+                                              db.insertExchangeRecordWithHash(intFromValue,
+                                                      strFromValueCurrency,
+                                                      intToValue,
+                                                      strToValueCurrency,
+                                                      strComment);
+                                              Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
+                                              toast.setGravity(Gravity.CENTER, 0, 0);
+                                              toast.show();
+                                              fromValue.setText("");
+                                              toValue.setText("");
+                                              comment.setText("");
 
-            }
+                                          }
                                       }
 
 
         );
-
-
 
 
     }
