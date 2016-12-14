@@ -128,15 +128,7 @@ public class NewOperation extends Activity {
         et1 = (EditText) findViewById(R.id.amountValue);
         et2 = (EditText) findViewById(R.id.amountValue2);
 
-        Save.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                fromValue.setText("");
-                toValue.setText("");
-                comment.setText("");
-
-            }
-        });
 
 
 
@@ -166,6 +158,10 @@ public class NewOperation extends Activity {
                 Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
+                fromValue.setText("");
+                toValue.setText("");
+                comment.setText("");
+
             }
                                       }
 
