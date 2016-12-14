@@ -3,6 +3,7 @@ package spreadsheet.exchangebook;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 public class NewOperation extends Activity {
 
     DictionaryDBHelper db;
+
 
 
     public void selectCategory(View view) {
@@ -98,7 +100,6 @@ public class NewOperation extends Activity {
 */
 
 
-
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
         final EditText comment = (EditText) findViewById(R.id.amountValue3);
@@ -122,8 +123,18 @@ public class NewOperation extends Activity {
                         intToValue,
                         strToValueCurrency,
                         strComment);
+                Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
-        });
+                                      }
+
+
+        );
+
+
+
+
     }
 
 
@@ -132,7 +143,10 @@ public class NewOperation extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.setting_main, menu);
         return true;
+
+
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
