@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class NewOperation extends Activity {
 
     DictionaryDBHelper db;
-
+    private EditText et1, et2;
 
 
     public void selectCategory(View view) {
@@ -27,7 +27,39 @@ public class NewOperation extends Activity {
         startActivity(intent);
     }
 
+    /*
+        private TextWatcher mTextWacher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2,int i3) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2,int i3) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                checkFieldsForEmpyValues();
+            }
+        };
+
+        void checkFieldsForEmpyValues(){
+
+            Button Save = (Button) findViewById(R.id.Save);
+
+            String s1 = et1.getText().toString();
+            String s2 = et2.getText().toString();
+
+            if(s1.equals("") || s2.equals("")) {
+                Save.setEnabled(false);
+            } else {
+                Save.setEnabled(true);
+            }
+
+        }
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,43 +104,51 @@ public class NewOperation extends Activity {
 
 
         final String[] CurrencyOperation = {"Покупка", "Продажа"};
-        // адаптер
+
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
         spinnerTo.setAdapter(adapter2);
-        // заголовок
+
         spinnerTo.setPrompt("To Currency");
-        // выделяем элемент
         spinnerTo.setSelection(1);
-        // устанавливаем обработчик нажатия
-       /* spinnerTo.setOnItemSelectedListener(new OnItemSelectedListener() {
 
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                // показываем позиция нажатого элемента
-                Toast.makeText(getBaseContext(), "From Currency = " + CurrencyOperation[position], Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
-*/
 
 
         final EditText fromValue = (EditText) findViewById(R.id.amountValue);
         final EditText toValue = (EditText) findViewById(R.id.amountValue2);
         final EditText comment = (EditText) findViewById(R.id.amountValue3);
+        final Button Save = (Button) findViewById(R.id.Save);
+
         fromValue.setText("");
         toValue.setText("");
         comment.setText("");
 
+        et1 = (EditText) findViewById(R.id.amountValue);
+        et2 = (EditText) findViewById(R.id.amountValue2);
+
+        Save.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                fromValue.setText("");
+                toValue.setText("");
+                comment.setText("");
+
+            }
+        });
 
 
+
+/*
+
+        et1.addTextChangedListener(mTextWacher);
+        et2.addTextChangedListener(mTextWacher);
+
+
+        checkFieldsForEmpyValues();
+
+*/
         Button saveButton = (Button) findViewById(R.id.Save);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
