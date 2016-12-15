@@ -43,11 +43,6 @@ public class NewOperation extends Activity {
         }
     };
 
-    public void selectCategory(View view) {
-        Intent intent = new Intent(this, MainMenuActivity.class);
-        startActivity(intent);
-    }
-
     void checkFieldsForEmpyValues() {
 
         String fromText = fromValue.getText().toString();
@@ -61,20 +56,33 @@ public class NewOperation extends Activity {
 
     }
 
+    private void goBack() {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        db = new DictionaryDBHelper(this);
         setContentView(R.layout.activity_new_operation);
+        final EditText comment = (EditText) findViewById(R.id.amountValue3);
+        saveButton = (Button) findViewById(R.id.Save);
+        final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
         Button button = (Button) findViewById(R.id.button);
+        final Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
+        fromValue = (EditText) findViewById(R.id.amountValue);
+        toValue = (EditText) findViewById(R.id.amountValue2);
+
+        db = new DictionaryDBHelper(this);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectCategory(view);
+                goBack();
+
             }
         });
         this.setTitle(R.string.new_exchange);
-
 
         //адаптер
         final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN"};
@@ -83,7 +91,6 @@ public class NewOperation extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
         spinnerFrom.setAdapter(adapter);
         // заголовок
         spinnerFrom.setPrompt("From Currency");
@@ -109,17 +116,11 @@ public class NewOperation extends Activity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
         spinnerTo.setAdapter(adapter2);
 
         spinnerTo.setPrompt("To Currency");
         spinnerTo.setSelection(1);
 
-
-        fromValue = (EditText) findViewById(R.id.amountValue);
-        toValue = (EditText) findViewById(R.id.amountValue2);
-        final EditText comment = (EditText) findViewById(R.id.amountValue3);
-        final Button Save = (Button) findViewById(R.id.Save);
 
         fromValue.setText("");
         toValue.setText("");
@@ -130,8 +131,8 @@ public class NewOperation extends Activity {
 
         checkFieldsForEmpyValues();
 
-        saveButton = (Button) findViewById(R.id.Save);
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        saveButton.setOnClickListener(
+                new View.OnClickListener() {
                                           @Override
                                           public void onClick(View view) {
                                               Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;

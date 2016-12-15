@@ -110,11 +110,11 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
     public ExchangeOperation getDataByPosition(int position, String order_by) {
         SQLiteDatabase db = this.getReadableDatabase();
         String order = "";
-        if (order_by.equals("date")) {
+        if ("date".equals(order_by)) {
             order = DATABASE_CREATED;
-        } else if (order_by.equals("from")) {
+        } else if ("from".equals(order_by)) {
             order = DATABASE_FROM_CURRENCY;
-        } else if (order_by.equals("to")) {
+        } else if ("to".equals(order_by)) {
             order = DATABASE_TO_CURRENCY;
         }
         Cursor res = db.rawQuery(
