@@ -26,6 +26,11 @@ public class MainMenuActivity extends Activity {
         startActivity(intent);
     }
 
+    public void selectsync(View view) {
+        Intent intent = new Intent(this, HttpExampleActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,6 +65,14 @@ public class MainMenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 selectFirst(view);
+            }
+        });
+
+        Button buttonsync = (Button) findViewById(R.id.button_sync_select);
+        buttonsync.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectsync(view);
             }
         });
 

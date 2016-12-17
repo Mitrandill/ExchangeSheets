@@ -142,6 +142,7 @@
             android:id="@+id/youroperation_curse"
             android:layout_width="98dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.03"
             android:text="12345.6"
             android:textSize="24sp" />
 

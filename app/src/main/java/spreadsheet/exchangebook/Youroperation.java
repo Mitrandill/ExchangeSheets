@@ -17,6 +17,13 @@ public class Youroperation extends Activity {
     DictionaryDBHelper db;
 
 
+    float num1 = 0;
+    float num2 = 0;
+    float result = 0;
+    String oper = "";
+
+
+
     public void selectCategory(View view) {
         Intent intent = new Intent(this, List1.class);
         startActivity(intent);
@@ -60,6 +67,20 @@ public class Youroperation extends Activity {
         TextView comment = (TextView) findViewById(R.id.youroperation_to_value_comment);
         comment.setText(el.getComment());
 
+        num1 = Float.parseFloat(Float.toString(el.getToValue() / 100));
+        //   num1 = Float.parseFloat(tovalue.getText().toString());
+        //   num2 = Float.parseFloat(fromcurrency.getText().toString());
+        num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));
+
+        oper = "/";
+
+        result = num1 / num2;
+
+        TextView curse = (TextView) findViewById(R.id.youroperation_curse);
+        curse.setText(Float.toString(result));
+
+
+
         Button button = (Button) findViewById(R.id.youroperation_back);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +88,7 @@ public class Youroperation extends Activity {
                 selectCategory(view);
             }
         });
+
 
         this.setTitle(getString(R.string.view_operation) + id.toString());
     }

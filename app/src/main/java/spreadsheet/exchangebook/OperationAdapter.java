@@ -21,7 +21,11 @@ import java.util.Date;
 public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.ViewHolder> {
 
     DictionaryDBHelper db;
+    float num1 = 0;
+    float num2 = 0;
+    float result = 0;
     private Activity parent;
+
 
 
     public OperationAdapter(DictionaryDBHelper db, Activity parent) {
@@ -63,12 +67,22 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
     public void onBindViewHolder(ViewHolder holder, int position) {
         ExchangeOperation el = db.getDataByPosition(position, "date");
 
+        num1 = Float.parseFloat(Float.toString(el.getToValue() / 100));
+        num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));
+
+        result = num1 / num2;
+
+
+
+
+
+
         final TextView fromValue = holder.fromValue;
         final TextView fromCurrency = holder.fromCurrency;
         final TextView toValue = holder.toValue;
      //   final TextView toCurrency = holder.toCurrency;
         final TextView datecurency = holder.created;
-
+        final TextView curse = holder.curse;
 
         final Integer selected = el.getId();
         holder.itemcontainer.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +116,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         holder.toValue.setText(Float.toString(el.getToValue() / 100));
       //  holder.toCurrency.setText(el.getToCurrency());
         holder.created.setText(formatTo.format(date));
-
+        holder.curse.setText(Float.toString(result));
     }
 
     @Override
@@ -119,6 +133,8 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
      //   public TextView toCurrency;
         public TextView created;
         public RelativeLayout itemcontainer;
+        public TextView curse;
+
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
@@ -128,7 +144,7 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         //    toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
             created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
             itemcontainer = (RelativeLayout) itemLayoutView.findViewById(R.id.layout_item_container);
-
+            curse = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
 
         }
 

@@ -26,4 +26,5 @@
     <string name="sum">SUM</string>
     <string name="twocourse">COURSE</string>
     <string name="UAH">UAH</string>
+    <string name="title_activity_http_example">HttpExampleActivity</string>
 </resources>
