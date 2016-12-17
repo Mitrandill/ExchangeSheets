@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="153dp"
-        android:text="Button" />
+        android:text="SYNC" />
 
     <TextView
         android:id="@+id/textsync"

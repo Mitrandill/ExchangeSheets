@@ -40,7 +40,7 @@ public class HttpExampleActivity extends Activity {
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
-                    new RequestTask().execute("http://google.com/");
+                    new RequestTask().execute("http://api.exchange.dmitriy.in.ua/?deviceHash=abcdef&action=saveOperations&data=notbase64encoded");
 
                 } else {
                     textsync.setText("нет соединения ");
