@@ -18,30 +18,27 @@ import java.util.Date;
  * Created by mixail on 12/6/16.
  */
 
-public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.ViewHolder> {
+class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder> {
 
-    DictionaryDBHelper db;
-    float num1 = 0;
-    float num2 = 0;
-    float result = 0;
+    private DictionaryDBHelper db;
+    private float num1 = 0;
+    private float num2 = 0;
+    private float result = 0;
     private Activity parent;
+    private String currentOrder;
 
-
-
-    public OperationAdapter(DictionaryDBHelper db, Activity parent) {
+    OperationAdapter(DictionaryDBHelper db, Activity parent) {
 
         this.db = db;
         this.parent = parent;
+        this.currentOrder = "date";
 
     }
 
-    public void selectSubCategory(Integer id) {
+    private void selectSubCategory(Integer id) {
         Intent intent = new Intent(this.parent, Youroperation.class);
         intent.putExtra("id", id);
-        //      intent.putExtra("date", date);
         this.parent.startActivity(intent);
-
-
     }
 
 
@@ -54,18 +51,13 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
                 .inflate(R.layout.item_layout, null);
 
         // create ViewHolder
-        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
-
-
-        return viewHolder;
-
-
+        return new ViewHolder(itemLayoutView);
     }
 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ExchangeOperation el = db.getDataByPosition(position, "date");
+        ExchangeOperation el = db.getDataByPosition(position, this.currentOrder);
 
         num1 = Float.parseFloat(Float.toString(el.getToValue() / 100));
         num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));
@@ -124,19 +116,23 @@ public class OperationAdapter  extends RecyclerView.Adapter<OperationAdapter.Vie
         return db.numberOfOperationsRows();
     }
 
+    void setCurrentOrder(String currentOrder) {
+        this.currentOrder = currentOrder;
+    }
+
     // inner class to hold a reference to each item of RecyclerView
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView fromValue;
-        public TextView fromCurrency;
-        public TextView toValue;
+        TextView fromValue;
+        TextView fromCurrency;
+        TextView toValue;
      //   public TextView toCurrency;
-        public TextView created;
-        public RelativeLayout itemcontainer;
-        public TextView curse;
+     TextView created;
+        RelativeLayout itemcontainer;
+        TextView curse;
 
 
-        public ViewHolder(View itemLayoutView) {
+        ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             fromValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_from);
             fromCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_fromcurrency);

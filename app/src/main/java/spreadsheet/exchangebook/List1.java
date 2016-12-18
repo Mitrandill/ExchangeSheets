@@ -7,6 +7,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -28,12 +29,12 @@ public class List1 extends Activity {
         db = new DictionaryDBHelper(this);
 
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.OperationsList);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.OperationsList);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        OperationAdapter mAdapter = new OperationAdapter(db, this);
+        final OperationAdapter mAdapter = new OperationAdapter(db, this);
 
         recyclerView.setAdapter(mAdapter);
 
@@ -43,7 +44,7 @@ public class List1 extends Activity {
         final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN"};
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         final Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
@@ -53,9 +54,9 @@ public class List1 extends Activity {
 
         spinnerFrom.setSelection(2);
 
-        final String[] CurrencyOperation = {"Покупка", "Продажа"};
+        final String[] CurrencyOperation = {"Покупка", "Продажа", "Дата"};
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
@@ -63,11 +64,31 @@ public class List1 extends Activity {
 
         spinnerTo.setPrompt("To Currency");
 
-        spinnerTo.setSelection(1);
+        spinnerTo.setSelection(2);
 
+        spinnerTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                switch (position) {
+                    case 0:
+                        mAdapter.setCurrentOrder("from");
+                        break;
+                    case 1:
+                        mAdapter.setCurrentOrder("to");
+                        break;
+                    default:
+                        mAdapter.setCurrentOrder("date");
+                        break;
+                }
+                mAdapter.notifyDataSetChanged();
+                recyclerView.invalidate();
+            }
 
-
-
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
 
         Button button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +100,6 @@ public class List1 extends Activity {
 
 
         this.setTitle(getString(R.string.view_operation));
-
 
     }
 
