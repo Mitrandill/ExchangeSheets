@@ -134,6 +134,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
                     res.getInt(res.getColumnIndex(DATABASE_TO_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_TO_CURRENCY)),
                     res.getString(res.getColumnIndex(DATABASE_CREATED)),
+                    res.getString(res.getColumnIndex(DATABASE_HASH)),
                     res.getString(res.getColumnIndex(DATABASE_COMMENT))
             );
 
@@ -163,6 +164,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
                     res.getInt(res.getColumnIndex(DATABASE_TO_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_TO_CURRENCY)),
                     res.getString(res.getColumnIndex(DATABASE_CREATED)),
+                    res.getString(res.getColumnIndex(DATABASE_HASH)),
                     res.getString(res.getColumnIndex(DATABASE_COMMENT))
             );
 

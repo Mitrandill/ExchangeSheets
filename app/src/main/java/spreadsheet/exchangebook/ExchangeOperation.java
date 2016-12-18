@@ -13,15 +13,18 @@ public class ExchangeOperation {
     private String toCurrency;
     private String created;
     private String comment;
+    private String hash;
 
-    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created, String comment) {
+    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created, String hash, String comment) {
         this.id = id;
         this.fromValue = fromValue;
         this.fromCurrency = fromCurrency;
         this.toValue = toValue;
         this.toCurrency = toCurrency;
         this.created = created;
+        this.hash = hash;
         this.comment = comment;
+
     }
 
     public Integer getFromValue() {
@@ -78,5 +81,13 @@ public class ExchangeOperation {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 }
