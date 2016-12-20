@@ -40,31 +40,25 @@ public class HttpExampleActivity extends Activity {
 
 
         int count = db.numberOfOperationsRows();
+
         for (int x = 1; x <= count; x = x + 1) {
-            ExchangeOperation el = db.getDataById(x);
-            String counts = "{" +
-                    "\"action\" : \"sell\"," +
-                    "\"currencyCodeToBuy\" : \"" + el.getFromCurrency() + "\"," +
-                    "\"currencyCodeToSell\" : \"" + el.getToCurrency() + "\"," +
-                    "\"amountToBuy\" : \"" + Float.toString(el.gettoUAH() / 100) + "\" " +
-                    "\"amountToSell\" : \"" + Float.toString(el.getFromValue() / 100) + "\" " +
-                    "\"time\" : \"" + el.getCreated() + "\"," +
-                    "\"comments\" : \"" + el.getComment() + "\"," +
-                    "\"hash\" : \"" + el.getHash() + "\"" +
-                    //          Date currentDate = new Date(); currentDate.getTime() / 1000;
-                    "},";
-            json += counts;
 
-        }
-        json = "[" + json + "]";
+            ExchangeOperation exchangeOperation = db.getDataById(x);
 
-        String encoded = "";
-        try {
-            encoded = URLEncoder.encode(json, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            encoded = "";
+            json += exchangeOperation.toJSON();
+
+            if (x < count) {
+                json = json + ",";
+            }
         }
-        final String base64json = Base64.encodeToString(encoded.getBytes(), Base64.DEFAULT);
+
+        json = "{\"operations\": [" + json + "]}";
+
+        final String data = encodeData(json);
+
+        //final String domain = "192.168.1.3:8080";
+        //final String domain = "api.dev.exchange.dmitriy.in.ua";
+        final String domain = "api.exchange.dmitriy.in.ua";
 
         buttonsync.setOnClickListener(new OnClickListener() {
 
@@ -75,15 +69,25 @@ public class HttpExampleActivity extends Activity {
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
-                    // new RequestTask().execute("http://192.168.1.3:8080/", "deviceHash=abcdef&action=saveOperations&data=" + base64json);
-                    new RequestTask().execute("http://api.exchange.dmitriy.in.ua/", "deviceHash=abcdef&action=saveOperations&data=" + base64json);
+                    new RequestTask().execute("http://" + domain + "/", "deviceHash=abcdef&action=saveOperations&data=" + data);
                 } else {
                     textsync.setText("нет соединения ");
                 }
-
-
             }
         });
+    }
+
+    protected String encodeData(String data) {
+
+        String encoded = "";
+
+        try {
+            encoded = URLEncoder.encode(data, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            encoded = "";
+        }
+
+        return Base64.encodeToString(encoded.getBytes(), Base64.DEFAULT);
     }
 
     class RequestTask extends AsyncTask<String, String, String> {
