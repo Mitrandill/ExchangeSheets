@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class ExchangeOperation {
 
     private Integer id;
+    private String operatorHash;
     private Integer fromValue;
     private String fromCurrency;
     private Integer toUAH;
@@ -32,6 +33,8 @@ public class ExchangeOperation {
             String created,
             String hash,
             String comment) {
+
+        this.operatorHash = "dr2rfwererw";
 
         this.id = id;
         this.fromValue = fromValue;
@@ -152,24 +155,30 @@ public class ExchangeOperation {
         String action = "";
         String currencyCodeToBuy = "";
         String currencyCodeToSell = "";
+        String amountToBuy = "";
+        String amountToSell = "";
 
-        if (this.toCurrency == "Продажа") {
+        if ("Продажа".equals(this.toCurrency)) {
             action = "sell";
+            amountToBuy = Float.toString(this.toUAH / 100);
+            amountToSell = Float.toString(this.fromValue / 100);
             currencyCodeToBuy = "uah";
             currencyCodeToSell = this.fromCurrency.toLowerCase();
         } else {
             action = "buy";
+            amountToBuy = Float.toString(this.fromValue / 100);
+            amountToSell = Float.toString(this.toUAH / 100);
             currencyCodeToBuy = this.fromCurrency.toLowerCase();
             currencyCodeToSell = "uah";
         }
 
         String json = "{" +
-            "\"operatorHash\": \"dr2rfwererw\"," +
+            "\"operatorHash\": \"" + this.operatorHash + "\"," +
             "\"action\" : \"" + action + "\"," +
             "\"currencyCodeToBuy\" : \"" + currencyCodeToBuy + "\"," +
             "\"currencyCodeToSell\" : \"" + currencyCodeToSell + "\"," +
-            "\"amountToBuy\" : \"" + Float.toString(this.toUAH / 100) + "\"," +
-            "\"amountToSell\" : \"" + Float.toString(this.fromValue / 100) + "\"," +
+            "\"amountToBuy\" : \"" + amountToBuy + "\"," +
+            "\"amountToSell\" : \"" + amountToSell + "\"," +
             "\"unixTime\" : \"" + getUnixTime() + "\"," +
             "\"utcOffset\" : \"" + getUtcOffset() + "\"," +
             "\"comment\" : \"" + this.comment + "\"," +
