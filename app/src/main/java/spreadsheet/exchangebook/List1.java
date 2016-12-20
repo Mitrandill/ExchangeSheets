@@ -54,6 +54,25 @@ public class List1 extends Activity {
 
         spinnerFrom.setSelection(2);
 
+       /* spinnerFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                switch (position) {
+                    case 0:
+                        mAdapter.setCurrentOrder("from");
+                        break;
+
+                }
+                mAdapter.notifyDataSetChanged();
+                recyclerView.invalidate();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });*/
+
         final String[] CurrencyOperation = {"Покупка", "Продажа", "Дата"};
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyOperation);

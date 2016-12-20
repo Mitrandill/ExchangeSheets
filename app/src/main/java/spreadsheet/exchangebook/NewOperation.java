@@ -21,7 +21,7 @@ import android.widget.Toast;
 public class NewOperation extends Activity {
 
     EditText fromValue;
-    EditText toValue;
+    EditText toUAH;
     DictionaryDBHelper db;
     Button saveButton;
 
@@ -46,7 +46,7 @@ public class NewOperation extends Activity {
     void checkFieldsForEmpyValues() {
 
         String fromText = fromValue.getText().toString();
-        String toText = toValue.getText().toString();
+        String toText = toUAH.getText().toString();
 
         if (fromText.equals("") || toText.equals("")) {
             saveButton.setEnabled(false);
@@ -71,7 +71,7 @@ public class NewOperation extends Activity {
         Button button = (Button) findViewById(R.id.button);
         final Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
         fromValue = (EditText) findViewById(R.id.amountValue);
-        toValue = (EditText) findViewById(R.id.amountValue2);
+        toUAH = (EditText) findViewById(R.id.amountUAH);
 
         db = new DictionaryDBHelper(this);
 
@@ -123,11 +123,11 @@ public class NewOperation extends Activity {
 
 
         fromValue.setText("");
-        toValue.setText("");
+        toUAH.setText("");
         comment.setText("");
 
         fromValue.addTextChangedListener(mTextWacher);
-        toValue.addTextChangedListener(mTextWacher);
+        toUAH.addTextChangedListener(mTextWacher);
 
         checkFieldsForEmpyValues();
 
@@ -137,19 +137,19 @@ public class NewOperation extends Activity {
                                           public void onClick(View view) {
                                               Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
                                               String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
-                                              Integer intToValue = Integer.parseInt(toValue.getText().toString()) * 100;
+                                              Integer intToUAH = Integer.parseInt(toUAH.getText().toString()) * 100;
                                               String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
                                               String strComment = comment.getText().toString();
                                               db.insertExchangeRecordWithHash(intFromValue,
                                                       strFromValueCurrency,
-                                                      intToValue,
+                                                      intToUAH,
                                                       strToValueCurrency,
                                                       strComment);
                                               Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
                                               toast.setGravity(Gravity.CENTER, 0, 0);
                                               toast.show();
                                               fromValue.setText("");
-                                              toValue.setText("");
+                                              toUAH.setText("");
                                               comment.setText("");
 
                                           }

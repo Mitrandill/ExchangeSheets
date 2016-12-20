@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignTop="@+id/amountValue2"
+                android:layout_alignTop="@+id/amountUAH"
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="Гривна"
@@ -110,7 +110,7 @@
 
             <EditText
 
-                android:id="@+id/amountValue2"
+                android:id="@+id/amountUAH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

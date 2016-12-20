@@ -18,8 +18,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.Reader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class HttpExampleActivity extends Activity {
     private static final String DEBUG_TAG = "HttpExample";
@@ -44,18 +46,25 @@ public class HttpExampleActivity extends Activity {
                     "\"action\" : \"sell\"," +
                     "\"currencyCodeToBuy\" : \"" + el.getFromCurrency() + "\"," +
                     "\"currencyCodeToSell\" : \"" + el.getToCurrency() + "\"," +
-                    "\"amountToBuy\" : \"" + Float.toString(el.getToValue() / 100) + "\" " +
+                    "\"amountToBuy\" : \"" + Float.toString(el.gettoUAH() / 100) + "\" " +
                     "\"amountToSell\" : \"" + Float.toString(el.getFromValue() / 100) + "\" " +
                     "\"time\" : \"" + el.getCreated() + "\"," +
                     "\"comments\" : \"" + el.getComment() + "\"," +
                     "\"hash\" : \"" + el.getHash() + "\"" +
-
+                    //          Date currentDate = new Date(); currentDate.getTime() / 1000;
                     "},";
             json += counts;
 
         }
+        json = "[" + json + "]";
 
-        final String base64json = Base64.encodeToString(("[" + json + "]").getBytes(), Base64.DEFAULT);
+        String encoded = "";
+        try {
+            encoded = URLEncoder.encode(json, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            encoded = "";
+        }
+        final String base64json = Base64.encodeToString(encoded.getBytes(), Base64.DEFAULT);
 
         buttonsync.setOnClickListener(new OnClickListener() {
 
@@ -66,6 +75,7 @@ public class HttpExampleActivity extends Activity {
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
+                    // new RequestTask().execute("http://192.168.1.3:8080/", "deviceHash=abcdef&action=saveOperations&data=" + base64json);
                     new RequestTask().execute("http://api.exchange.dmitriy.in.ua/", "deviceHash=abcdef&action=saveOperations&data=" + base64json);
                 } else {
                     textsync.setText("нет соединения ");

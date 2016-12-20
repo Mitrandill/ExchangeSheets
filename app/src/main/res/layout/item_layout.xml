@@ -50,7 +50,7 @@
             android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/layout_item_tovalue"
+            android:id="@+id/layout_item_toUAH"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_alignBaseline="@+id/layout_item_datecurency"
@@ -68,8 +68,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/layout_item_tovalue"
-            android:layout_toStartOf="@+id/layout_item_tovalue"
+            android:layout_toLeftOf="@+id/layout_item_toUAH"
+            android:layout_toStartOf="@+id/layout_item_toUAH"
             android:text="$"
             android:textAlignment="center"
             android:textColor="@android:color/darker_gray"

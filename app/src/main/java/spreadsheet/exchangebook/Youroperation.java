@@ -55,8 +55,8 @@ public class Youroperation extends Activity {
         TextView created = (TextView) findViewById(R.id.youroperation_date);
         created.setText(formatTo.format(date));
 
-        TextView tovalue = (TextView) findViewById(R.id.youroperation_to_value);
-        tovalue.setText(Float.toString(el.getToValue() / 100));
+        TextView toUAH = (TextView) findViewById(R.id.youroperation_to_UAH);
+        toUAH.setText(Float.toString(el.gettoUAH() / 100));
 
         TextView fromcurrency = (TextView) findViewById(R.id.youroperation_from_value_currency);
         fromcurrency.setText(el.getFromCurrency());
@@ -67,7 +67,7 @@ public class Youroperation extends Activity {
         TextView comment = (TextView) findViewById(R.id.youroperation_to_value_comment);
         comment.setText(el.getComment());
 
-        num1 = Float.parseFloat(Float.toString(el.getToValue() / 100));
+        num1 = Float.parseFloat(Float.toString(el.gettoUAH() / 100));
         //   num1 = Float.parseFloat(tovalue.getText().toString());
         //   num2 = Float.parseFloat(fromcurrency.getText().toString());
         num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));

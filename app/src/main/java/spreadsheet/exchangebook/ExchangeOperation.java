@@ -9,17 +9,17 @@ public class ExchangeOperation {
     private Integer id;
     private Integer fromValue;
     private String fromCurrency;
-    private Integer toValue;
+    private Integer toUAH;
     private String toCurrency;
     private String created;
     private String comment;
     private String hash;
 
-    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toValue, String toCurrency, String created, String hash, String comment) {
+    public ExchangeOperation(Integer id, Integer fromValue, String fromCurrency, Integer toUAH, String toCurrency, String created, String hash, String comment) {
         this.id = id;
         this.fromValue = fromValue;
         this.fromCurrency = fromCurrency;
-        this.toValue = toValue;
+        this.toUAH = toUAH;
         this.toCurrency = toCurrency;
         this.created = created;
         this.hash = hash;
@@ -43,12 +43,12 @@ public class ExchangeOperation {
         this.fromCurrency = fromCurrency;
     }
 
-    public Integer getToValue() {
-        return toValue;
+    public Integer gettoUAH() {
+        return toUAH;
     }
 
-    public void setToValue(Integer toValue) {
-        this.toValue = toValue;
+    public void setToUAH(Integer toUAH) {
+        this.toUAH = toUAH;
     }
 
     public String getToCurrency() {

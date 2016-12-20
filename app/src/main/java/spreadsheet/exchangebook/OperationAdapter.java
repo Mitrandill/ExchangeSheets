@@ -59,7 +59,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
     public void onBindViewHolder(ViewHolder holder, int position) {
         ExchangeOperation el = db.getDataByPosition(position, this.currentOrder);
 
-        num1 = Float.parseFloat(Float.toString(el.getToValue() / 100));
+        num1 = Float.parseFloat(Float.toString(el.gettoUAH() / 100));
         num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));
 
         result = num1 / num2;
@@ -71,7 +71,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
         final TextView fromValue = holder.fromValue;
         final TextView fromCurrency = holder.fromCurrency;
-        final TextView toValue = holder.toValue;
+        final TextView toUAH = holder.toUAH;
      //   final TextView toCurrency = holder.toCurrency;
         final TextView datecurency = holder.created;
         final TextView curse = holder.curse;
@@ -105,7 +105,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
         holder.fromValue.setText(Float.toString(el.getFromValue() / 100));
         holder.fromCurrency.setText(el.getFromCurrency());
-        holder.toValue.setText(Float.toString(el.getToValue() / 100));
+        holder.toUAH.setText(Float.toString(el.gettoUAH() / 100));
       //  holder.toCurrency.setText(el.getToCurrency());
         holder.created.setText(formatTo.format(date));
         holder.curse.setText(Float.toString(result));
@@ -125,7 +125,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
         TextView fromValue;
         TextView fromCurrency;
-        TextView toValue;
+        TextView toUAH;
      //   public TextView toCurrency;
      TextView created;
         RelativeLayout itemcontainer;
@@ -136,7 +136,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
             super(itemLayoutView);
             fromValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_from);
             fromCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_fromcurrency);
-            toValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_tovalue);
+            toUAH = (TextView) itemLayoutView.findViewById(R.id.layout_item_toUAH);
         //    toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
             created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
             itemcontainer = (RelativeLayout) itemLayoutView.findViewById(R.id.layout_item_container);

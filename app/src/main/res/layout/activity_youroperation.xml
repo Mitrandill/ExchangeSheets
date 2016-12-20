@@ -106,7 +106,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/youroperation_to_value"
+            android:id="@+id/youroperation_to_UAH"
             android:layout_width="98dp"
             android:layout_height="match_parent"
             android:text="12345.6"

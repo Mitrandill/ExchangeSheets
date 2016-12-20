@@ -24,7 +24,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_EXCHANGE = "exchange";
     private static final String DATABASE_FROM_CENTS = "from_cents";
     private static final String DATABASE_FROM_CURRENCY = "from_currency";
-    private static final String DATABASE_TO_CENTS = "to_cents";
+    private static final String DATABASE_TO_UAH = "to_UAH";
     private static final String DATABASE_TO_CURRENCY = "to_currency";
     private static final String DATABASE_CREATED = "created";
     private static final String DATABASE_HASH = "hash_signature";
@@ -92,7 +92,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
                         DATABASE_ID + " integer primary key, " +
                         DATABASE_FROM_CENTS + " integer, " +
                         DATABASE_FROM_CURRENCY + " text, " +
-                        DATABASE_TO_CENTS + " integer, " +
+                        DATABASE_TO_UAH + " integer, " +
                         DATABASE_TO_CURRENCY + " text," +
                         DATABASE_CREATED + " text," +
                         DATABASE_HASH + " text," +
@@ -131,7 +131,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
                     res.getInt(res.getColumnIndex(DATABASE_ID)),
                     res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY)),
-                    res.getInt(res.getColumnIndex(DATABASE_TO_CENTS)),
+                    res.getInt(res.getColumnIndex(DATABASE_TO_UAH)),
                     res.getString(res.getColumnIndex(DATABASE_TO_CURRENCY)),
                     res.getString(res.getColumnIndex(DATABASE_CREATED)),
                     res.getString(res.getColumnIndex(DATABASE_HASH)),
@@ -161,7 +161,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
                     res.getInt(res.getColumnIndex(DATABASE_ID)),
                     res.getInt(res.getColumnIndex(DATABASE_FROM_CENTS)),
                     res.getString(res.getColumnIndex(DATABASE_FROM_CURRENCY)),
-                    res.getInt(res.getColumnIndex(DATABASE_TO_CENTS)),
+                    res.getInt(res.getColumnIndex(DATABASE_TO_UAH)),
                     res.getString(res.getColumnIndex(DATABASE_TO_CURRENCY)),
                     res.getString(res.getColumnIndex(DATABASE_CREATED)),
                     res.getString(res.getColumnIndex(DATABASE_HASH)),
@@ -175,13 +175,13 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public long insertExcengeRecord(int from_cents, String from_currency, int to_cents, String to_currency, String created, String comment, String hash_value) {
+    public long insertExcengeRecord(int from_cents, String from_currency, int to_UAH, String to_currency, String created, String comment, String hash_value) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(DATABASE_FROM_CENTS, from_cents);
         contentValues.put(DATABASE_FROM_CURRENCY, from_currency);
-        contentValues.put(DATABASE_TO_CENTS, to_cents);
+        contentValues.put(DATABASE_TO_UAH, to_UAH);
         contentValues.put(DATABASE_TO_CURRENCY, to_currency);
         contentValues.put(DATABASE_CREATED, created);
         contentValues.put(DATABASE_COMMENT, comment);
@@ -189,12 +189,12 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return db.insert(DATABASE_EXCHANGE, null, contentValues);
     }
 
-    public long insertExchangeRecordWithHash(int from_cents, String from_currency, int to_cents, String to_currency, String comment) {
+    public long insertExchangeRecordWithHash(int from_cents, String from_currency, int to_UAH, String to_currency, String comment) {
         String created = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date());
 
 
-        String hash_value = SHA1(this.lastHash() + created + ":" + Integer.toString(from_cents) + ">" + from_currency + "<" + Integer.toString(to_cents) + ":" + to_currency + ":" + comment);
-        return this.insertExcengeRecord(from_cents, from_currency, to_cents, to_currency, created, comment, hash_value);
+        String hash_value = SHA1(this.lastHash() + created + ":" + Integer.toString(from_cents) + ">" + from_currency + "<" + Integer.toString(to_UAH) + ":" + to_currency + ":" + comment);
+        return this.insertExcengeRecord(from_cents, from_currency, to_UAH, to_currency, created, comment, hash_value);
     }
 
     public String lastHash() {
