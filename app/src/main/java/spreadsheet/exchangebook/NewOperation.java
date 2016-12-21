@@ -135,7 +135,26 @@ public class NewOperation extends Activity {
                 new View.OnClickListener() {
                                           @Override
                                           public void onClick(View view) {
-                                              Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
+                                              Float Value = Float.parseFloat(fromValue.getText().toString()) * 100;
+                                              int intFromValue = Math.round(Value);
+
+                                              String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
+
+                                              Float ToUAH = Float.parseFloat(toUAH.getText().toString()) * 100;
+                                              int intToUAH = Math.round(ToUAH);
+
+                                              String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
+                                              String strComment = comment.getText().toString();
+                                              db.insertExchangeRecordWithHash(intFromValue,
+                                                      strFromValueCurrency,
+                                                      intToUAH,
+                                                      strToValueCurrency,
+                                                      strComment);
+
+
+
+                                              /*
+                                               Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
                                               String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
                                               Integer intToUAH = Integer.parseInt(toUAH.getText().toString()) * 100;
                                               String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
@@ -145,6 +164,9 @@ public class NewOperation extends Activity {
                                                       intToUAH,
                                                       strToValueCurrency,
                                                       strComment);
+
+
+                                              */
                                               Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
                                               toast.setGravity(Gravity.CENTER, 0, 0);
                                               toast.show();

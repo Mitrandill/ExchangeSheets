@@ -65,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/amountText"
+                android:inputType="numberDecimal"
                 android:text="12345" />
 
             <TextView
@@ -116,6 +117,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/textView2"
                 android:layout_toRightOf="@+id/textView2"
+                android:inputType="numberDecimal"
                 android:text="12345" />
 
         </RelativeLayout>

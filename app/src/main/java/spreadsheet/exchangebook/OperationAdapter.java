@@ -68,11 +68,27 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
 
 
+/*
+        toUAH.setText(Float.toString(el.gettoUAH() / 100));
+        Float Value = Float.parseFloat(fromValu.getText().toString()) * 100;
+        int intFromValue = (int)Math.round(Value);
+
+        int i = 2015;
+        float f = (float) (i);
+
+ Integer UAH = Integer.parseInt(el.gettoUAH().toString());
+        float toUAH = (float) (UAH);
+
+        final TextView toUAH = holder.toUAH;
+        holder.toUAH.setText(el.gettoUAH() / 100);
+
+
+*/
+
 
         final TextView fromValue = holder.fromValue;
         final TextView fromCurrency = holder.fromCurrency;
         final TextView toUAH = holder.toUAH;
-     //   final TextView toCurrency = holder.toCurrency;
         final TextView datecurency = holder.created;
         final TextView curse = holder.curse;
 
@@ -106,7 +122,6 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         holder.fromValue.setText(Float.toString(el.getFromValue() / 100));
         holder.fromCurrency.setText(el.getFromCurrency());
         holder.toUAH.setText(Float.toString(el.gettoUAH() / 100));
-      //  holder.toCurrency.setText(el.getToCurrency());
         holder.created.setText(formatTo.format(date));
         holder.curse.setText(Float.toString(result));
     }
