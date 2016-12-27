@@ -41,7 +41,7 @@ public class ListOperationActivity extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-        final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN"};
+        final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN", " "};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyNames);
@@ -54,13 +54,31 @@ public class ListOperationActivity extends Activity {
 
         spinnerFrom.setSelection(2);
 
-       /* spinnerFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 switch (position) {
                     case 0:
-                        mAdapter.setCurrentOrder("from");
+                        mAdapter.setCurrentFilter("UAH");
+                        break;
+                    case 1:
+                        mAdapter.setCurrentFilter("EUR");
+                        break;
+                    case 2:
+                        mAdapter.setCurrentFilter("USD");
+                        break;
+                    case 3:
+                        mAdapter.setCurrentFilter("RUB");
+                        break;
+                    case 4:
+                        mAdapter.setCurrentFilter("GBP");
+                        break;
+                    case 5:
+                        mAdapter.setCurrentFilter("PLN");
+                        break;
+                    default:
+                        mAdapter.setCurrentFilter("");
                         break;
 
                 }
@@ -71,7 +89,7 @@ public class ListOperationActivity extends Activity {
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
             }
-        });*/
+        });
 
         final String[] CurrencyOperation = {"Покупка", "Продажа", "Дата"};
 
@@ -91,8 +109,9 @@ public class ListOperationActivity extends Activity {
                                        int position, long id) {
                 switch (position) {
                     case 0:
-                        mAdapter.setCurrentOrder("from");
+ /*                       mAdapter.setCurrentOrder("from");
                         break;
+  */
                     case 1:
                         mAdapter.setCurrentOrder("to");
                         break;

@@ -107,9 +107,14 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public ExchangeOperation getDataByPosition(int position, String order_by) {
+    public ExchangeOperation getDataByPosition(int position, String order_by, String filter) {
         SQLiteDatabase db = this.getReadableDatabase();
         String order = "";
+        String filter_string = "";
+        if (!filter.equals("")) {
+            filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
+
+        }
         if ("date".equals(order_by)) {
             order = DATABASE_CREATED;
         } else if ("from".equals(order_by)) {
@@ -120,6 +125,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery(
                 "select * from " +
                         DATABASE_EXCHANGE +
+                        filter_string +
                         " order by " +
                         order +
                         " limit 1 offset ?", new String[]{Integer.toString(position)});
@@ -209,9 +215,18 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return "";
     }
 
-    public int numberOfOperationsRows() {
+    public int numberOfOperationsRows(String filter) {
         SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, DATABASE_EXCHANGE);
-        return numRows;
+        if ("".equals(filter)) {
+            int numRows = (int) DatabaseUtils.queryNumEntries(db, DATABASE_EXCHANGE);
+            return numRows;
+        } else {
+            String filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
+            Cursor mCount = db.rawQuery("select count(*) from " + DATABASE_EXCHANGE + filter_string, null);
+            mCount.moveToFirst();
+            int numRows = mCount.getInt(0);
+            mCount.close();
+            return numRows;
+        }
     }
 }

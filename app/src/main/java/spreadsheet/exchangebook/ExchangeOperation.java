@@ -169,6 +169,7 @@ public class ExchangeOperation {
         } else {
             action = "buy";
             //         amountToBuy = String.format("%.2f",(double)this.fromValue );
+            //         amountToBuy = Float.toString(this.toUAH / 100);
             amountToBuy = Integer.toString(this.fromValue);
             amountToSell = Integer.toString(this.toUAH);
             currencyCodeToBuy = this.fromCurrency.toLowerCase();

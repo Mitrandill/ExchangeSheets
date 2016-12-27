@@ -23,12 +23,14 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
     private DictionaryDBHelper db;
     private Activity parent;
     private String currentOrder;
+    private String currentFilter;
 
     OperationAdapter(DictionaryDBHelper db, Activity parent) {
 
         this.db = db;
         this.parent = parent;
         this.currentOrder = "date";
+        this.currentFilter = "to";
 
     }
 
@@ -54,7 +56,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ExchangeOperation el = db.getDataByPosition(position, this.currentOrder);
+        ExchangeOperation el = db.getDataByPosition(position, this.currentOrder, this.currentFilter);
         double num1;
         double num2;
         double result;
@@ -90,11 +92,15 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
     @Override
     public int getItemCount() {
-        return db.numberOfOperationsRows();
+        return db.numberOfOperationsRows(this.currentFilter);
     }
 
     void setCurrentOrder(String currentOrder) {
         this.currentOrder = currentOrder;
+    }
+
+    void setCurrentFilter(String currentFilter) {
+        this.currentFilter = currentFilter;
     }
 
     // inner class to hold a reference to each item of RecyclerView
