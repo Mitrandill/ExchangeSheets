@@ -42,7 +42,7 @@ public class Youroperation extends Activity {
 
 
         TextView fromValue = (TextView) findViewById(R.id.youroperation_from_value);
-        fromValue.setText(Double.toString((double) el.getFromValue() / 100.0));
+        fromValue.setText(String.format("%.2f", (double) el.getFromValue() / 100.0));
 
         DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         Date date = null;
@@ -58,7 +58,7 @@ public class Youroperation extends Activity {
         created.setText(formatTo.format(date));
 
         TextView toUAH = (TextView) findViewById(R.id.youroperation_to_UAH);
-        toUAH.setText(Double.toString((double) el.gettoUAH() / 100.0));
+        toUAH.setText(String.format("%.2f", (double) el.gettoUAH() / 100.0));
 
         TextView fromCurrency = (TextView) findViewById(R.id.youroperation_from_value_currency);
         fromCurrency.setText(el.getFromCurrency());

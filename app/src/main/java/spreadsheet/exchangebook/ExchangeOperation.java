@@ -160,14 +160,17 @@ public class ExchangeOperation {
 
         if ("Продажа".equals(this.toCurrency)) {
             action = "sell";
-            amountToBuy = Float.toString(this.toUAH / 100);
-            amountToSell = Float.toString(this.fromValue / 100);
+            amountToBuy = Integer.toString(this.toUAH);
+            amountToSell = Integer.toString(this.fromValue);
+
+
             currencyCodeToBuy = "uah";
             currencyCodeToSell = this.fromCurrency.toLowerCase();
         } else {
             action = "buy";
-            amountToBuy = Float.toString(this.fromValue / 100);
-            amountToSell = Float.toString(this.toUAH / 100);
+            //         amountToBuy = String.format("%.2f",(double)this.fromValue );
+            amountToBuy = Integer.toString(this.fromValue);
+            amountToSell = Integer.toString(this.toUAH);
             currencyCodeToBuy = this.fromCurrency.toLowerCase();
             currencyCodeToSell = "uah";
         }
