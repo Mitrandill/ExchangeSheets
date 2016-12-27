@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.SharedPreferences;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +29,8 @@ public class HttpExampleActivity extends Activity {
     DictionaryDBHelper db; //обьявить переменную
     private TextView textsync;
     private Button buttonsync;
+    private final String LAST_SYNC_VALUE = "LastSync";
+    private final String PREFERENCES_NAME = "SyncSettings";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +41,12 @@ public class HttpExampleActivity extends Activity {
         db = new DictionaryDBHelper(this);//создать экземпляр класса дб
         String json = "";
 
-
         int count = db.numberOfOperationsRows();
 
-        for (int x = 1; x <= count; x = x + 1) {
+        SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+        int lastSyncValue = prefs.getInt(LAST_SYNC_VALUE, 1);
+
+        for (int x = lastSyncValue; x <= count; x = x + 1) {
 
             ExchangeOperation exchangeOperation = db.getDataById(x);
 
@@ -162,6 +167,13 @@ public class HttpExampleActivity extends Activity {
         @Override
         protected void onPostExecute(String result) {
             textsync.setText(result);
+            if (result.contains("\"status\":true")) {
+                int count = db.numberOfOperationsRows();
+                SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
+                SharedPreferences.Editor edit = prefs.edit();
+                edit.putInt(LAST_SYNC_VALUE, count + 1);
+                edit.apply();
+            }
         }
     }
 
