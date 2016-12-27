@@ -11,7 +11,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault.Light">
-        <activity android:name=".InputActivity" />
         <activity android:name=".FirstStepActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewOperation" />
-        <activity android:name=".List1" />
+        <activity android:name=".ListOperationActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".Youroperation" />
-        <activity android:name=".HttpExampleActivity" />
+        <activity android:name=".SyncActivity" />
     </application>
 
 </manifest>

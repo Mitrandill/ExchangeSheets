@@ -24,20 +24,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class HttpExampleActivity extends Activity {
+public class SyncActivity extends Activity {
     private static final String DEBUG_TAG = "HttpExample";
     private final String LAST_SYNC_VALUE = "LastSync";
     private final String PREFERENCES_NAME = "SyncSettings";
-    DictionaryDBHelper db; //обьявить переменную
+    DictionaryDBHelper db;
     private TextView textsync;
-    private Button buttonsync;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_http_example);
+        setContentView(R.layout.activity_sync);
         textsync = (TextView) findViewById(R.id.textsync);
-        buttonsync = (Button) findViewById(R.id.buttonsync);
+        Button buttonsync = (Button) findViewById(R.id.buttonsync);
         db = new DictionaryDBHelper(this);//создать экземпляр класса дб
 
         //final String domain = "192.168.1.3:8080";
@@ -129,11 +128,7 @@ public class HttpExampleActivity extends Activity {
                 os.write(payload.getBytes("UTF-8"));
                 os.close();
 
-                //conn.addRequestProperty("Accept-Encoding", "gzip");
-
-
                 // Starts the query
-                //conn.connect();
                 int response = conn.getResponseCode();
                 Log.v(DEBUG_TAG, "The response is: " + response);
                 is = conn.getInputStream();

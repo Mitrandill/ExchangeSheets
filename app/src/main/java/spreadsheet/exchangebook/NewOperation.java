@@ -151,22 +151,6 @@ public class NewOperation extends Activity {
                                                       strToValueCurrency,
                                                       strComment);
 
-
-
-                                              /*
-                                               Integer intFromValue = Integer.parseInt(fromValue.getText().toString()) * 100;
-                                              String strFromValueCurrency = CurrencyNames[spinnerFrom.getSelectedItemPosition()];
-                                              Integer intToUAH = Integer.parseInt(toUAH.getText().toString()) * 100;
-                                              String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
-                                              String strComment = comment.getText().toString();
-                                              db.insertExchangeRecordWithHash(intFromValue,
-                                                      strFromValueCurrency,
-                                                      intToUAH,
-                                                      strToValueCurrency,
-                                                      strComment);
-
-
-                                              */
                                               Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
                                               toast.setGravity(Gravity.CENTER, 0, 0);
                                               toast.show();

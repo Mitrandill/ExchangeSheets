@@ -63,33 +63,6 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
         result = num1 / num2;
 
-
-
-
-
-/*
-        toUAH.setText(Float.toString(el.gettoUAH() / 100));
-        Float Value = Float.parseFloat(fromValu.getText().toString()) * 100;
-        int intFromValue = (int)Math.round(Value);
-
-        int i = 2015;
-        float f = (float) (i);
-
-
-
-        final TextView toUAH = holder.toUAH;
-        holder.toUAH.setText(el.gettoUAH() / 100);
-
-
-*/
-
-
-        final TextView fromValue = holder.fromValue;
-        final TextView fromCurrency = holder.fromCurrency;
-        final TextView toUAH = holder.toUAH;
-        final TextView datecurency = holder.created;
-        final TextView curse = holder.curse;
-
         final Integer selected = el.getId();
         holder.itemcontainer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,15 +70,6 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
                 selectSubCategory(selected);
             }
         });
-/*
-        final Integer selected = el.getToCurrency();
-        holder.itemcontainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectSubCategory(selected);
-            }
-        });
-  */
 
         DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         Date date = null;

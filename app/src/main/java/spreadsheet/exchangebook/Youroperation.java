@@ -22,7 +22,7 @@ public class Youroperation extends Activity {
 
 
     public void selectCategory(View view) {
-        Intent intent = new Intent(this, List1.class);
+        Intent intent = new Intent(this, ListOperationActivity.class);
         startActivity(intent);
     }
 
@@ -41,8 +41,8 @@ public class Youroperation extends Activity {
         double result;
 
 
-        TextView fromvalue = (TextView) findViewById(R.id.youroperation_from_value);
-        fromvalue.setText(Double.toString((double) el.getFromValue() / 100.0));
+        TextView fromValue = (TextView) findViewById(R.id.youroperation_from_value);
+        fromValue.setText(Double.toString((double) el.getFromValue() / 100.0));
 
         DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         Date date = null;
@@ -60,11 +60,11 @@ public class Youroperation extends Activity {
         TextView toUAH = (TextView) findViewById(R.id.youroperation_to_UAH);
         toUAH.setText(Double.toString((double) el.gettoUAH() / 100.0));
 
-        TextView fromcurrency = (TextView) findViewById(R.id.youroperation_from_value_currency);
-        fromcurrency.setText(el.getFromCurrency());
+        TextView fromCurrency = (TextView) findViewById(R.id.youroperation_from_value_currency);
+        fromCurrency.setText(el.getFromCurrency());
 
-        TextView tocurrency = (TextView) findViewById(R.id.youroperation_to_value_currency);
-        tocurrency.setText(el.getToCurrency());
+        TextView toCurrency = (TextView) findViewById(R.id.youroperation_to_value_currency);
+        toCurrency.setText(el.getToCurrency());
 
         TextView comment = (TextView) findViewById(R.id.youroperation_to_value_comment);
         comment.setText(el.getComment());
@@ -77,8 +77,10 @@ public class Youroperation extends Activity {
 
         result = num1 / num2;
 
+        String res = String.format("%.2f", result);
+
         TextView curse = (TextView) findViewById(R.id.youroperation_curse);
-        curse.setText(Double.toString(result));
+        curse.setText(toString().format(res));
 
 
 

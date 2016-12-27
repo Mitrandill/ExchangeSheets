@@ -76,7 +76,7 @@
             android:id="@+id/youroperation_from_value"
             android:layout_width="98dp"
             android:layout_height="match_parent"
-            android:text="12345.6"
+            android:text="1234578.6"
             android:textSize="24sp" />
 
         <TextView
@@ -109,17 +109,9 @@
             android:id="@+id/youroperation_to_UAH"
             android:layout_width="98dp"
             android:layout_height="match_parent"
-            android:text="12345.6"
+            android:text="12345678.6"
             android:textSize="24sp" />
-        <!--
-                <TextView
-                    android:id="@+id/youroperation_to_value_currency"
-                    android:layout_width="91dp"
-                    android:layout_height="35dp"
-                    android:gravity="right"
-                    android:text="@string/currency"
-                    android:textSize="18sp" />
-        -->
+
     </LinearLayout>
 
     <LinearLayout

@@ -17,7 +17,7 @@ public class MainMenuActivity extends Activity {
     }
 
     public void selectList(View view) {
-        Intent intent = new Intent(this, List1.class);
+        Intent intent = new Intent(this, ListOperationActivity.class);
         startActivity(intent);
     }
 
@@ -27,7 +27,7 @@ public class MainMenuActivity extends Activity {
     }
 
     public void selectsync(View view) {
-        Intent intent = new Intent(this, HttpExampleActivity.class);
+        Intent intent = new Intent(this, SyncActivity.class);
         startActivity(intent);
     }
 

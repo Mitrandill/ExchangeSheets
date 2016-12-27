@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class List1 extends Activity {
+public class ListOperationActivity extends Activity {
 
     DictionaryDBHelper db;
 
@@ -25,7 +25,7 @@ public class List1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list1);
+        setContentView(R.layout.activity_list_operations);
         db = new DictionaryDBHelper(this);
 
 
