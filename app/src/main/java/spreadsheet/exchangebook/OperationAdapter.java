@@ -21,9 +21,6 @@ import java.util.Date;
 class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder> {
 
     private DictionaryDBHelper db;
-    private float num1 = 0;
-    private float num2 = 0;
-    private float result = 0;
     private Activity parent;
     private String currentOrder;
 
@@ -58,9 +55,11 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ExchangeOperation el = db.getDataByPosition(position, this.currentOrder);
-
-        num1 = Float.parseFloat(Float.toString(el.gettoUAH() / 100));
-        num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));
+        double num1;
+        double num2;
+        double result;
+        num1 = (double) el.gettoUAH() / 100.0;
+        num2 = (double) el.getFromValue() / 100.0;
 
         result = num1 / num2;
 
@@ -76,8 +75,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         int i = 2015;
         float f = (float) (i);
 
- Integer UAH = Integer.parseInt(el.gettoUAH().toString());
-        float toUAH = (float) (UAH);
+
 
         final TextView toUAH = holder.toUAH;
         holder.toUAH.setText(el.gettoUAH() / 100);
@@ -119,11 +117,11 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
         DateFormat formatTo = new SimpleDateFormat("dd MMM yyyy HH:mm");
 
-        holder.fromValue.setText(Float.toString(el.getFromValue() / 100));
+        holder.fromValue.setText(Double.toString((double) el.getFromValue() / 100.0));
         holder.fromCurrency.setText(el.getFromCurrency());
-        holder.toUAH.setText(Float.toString(el.gettoUAH() / 100));
+        holder.toUAH.setText(Double.toString((double) el.gettoUAH() / 100.0));
         holder.created.setText(formatTo.format(date));
-        holder.curse.setText(Float.toString(result));
+        holder.curse.setText(Double.toString(result));
     }
 
     @Override
@@ -141,8 +139,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         TextView fromValue;
         TextView fromCurrency;
         TextView toUAH;
-     //   public TextView toCurrency;
-     TextView created;
+        TextView created;
         RelativeLayout itemcontainer;
         TextView curse;
 
@@ -152,7 +149,6 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
             fromValue = (TextView) itemLayoutView.findViewById(R.id.layout_item_from);
             fromCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_fromcurrency);
             toUAH = (TextView) itemLayoutView.findViewById(R.id.layout_item_toUAH);
-        //    toCurrency = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);
             created = (TextView) itemLayoutView.findViewById(R.id.layout_item_datecurency);
             itemcontainer = (RelativeLayout) itemLayoutView.findViewById(R.id.layout_item_container);
             curse = (TextView) itemLayoutView.findViewById(R.id.layout_item_tocurency);

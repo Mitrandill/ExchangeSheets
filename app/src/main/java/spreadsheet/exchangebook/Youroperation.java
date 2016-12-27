@@ -17,10 +17,7 @@ public class Youroperation extends Activity {
     DictionaryDBHelper db;
 
 
-    float num1 = 0;
-    float num2 = 0;
-    float result = 0;
-    String oper = "";
+
 
 
 
@@ -39,8 +36,13 @@ public class Youroperation extends Activity {
         db = new DictionaryDBHelper(this);
         ExchangeOperation el = db.getDataById(id);
 
+        double num1;
+        double num2;
+        double result;
+
+
         TextView fromvalue = (TextView) findViewById(R.id.youroperation_from_value);
-        fromvalue.setText(Float.toString(el.getFromValue() / 100));
+        fromvalue.setText(Double.toString((double) el.getFromValue() / 100.0));
 
         DateFormat formatFrom = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         Date date = null;
@@ -56,7 +58,7 @@ public class Youroperation extends Activity {
         created.setText(formatTo.format(date));
 
         TextView toUAH = (TextView) findViewById(R.id.youroperation_to_UAH);
-        toUAH.setText(Float.toString(el.gettoUAH() / 100));
+        toUAH.setText(Double.toString((double) el.gettoUAH() / 100.0));
 
         TextView fromcurrency = (TextView) findViewById(R.id.youroperation_from_value_currency);
         fromcurrency.setText(el.getFromCurrency());
@@ -67,17 +69,16 @@ public class Youroperation extends Activity {
         TextView comment = (TextView) findViewById(R.id.youroperation_to_value_comment);
         comment.setText(el.getComment());
 
-        num1 = Float.parseFloat(Float.toString(el.gettoUAH() / 100));
-        //   num1 = Float.parseFloat(tovalue.getText().toString());
-        //   num2 = Float.parseFloat(fromcurrency.getText().toString());
-        num2 = Float.parseFloat(Float.toString(el.getFromValue() / 100));
+        num1 = (double) el.gettoUAH() / 100.0;
 
-        oper = "/";
+        num2 = (double) el.getFromValue() / 100.0;
+
+
 
         result = num1 / num2;
 
         TextView curse = (TextView) findViewById(R.id.youroperation_curse);
-        curse.setText(Float.toString(result));
+        curse.setText(Double.toString(result));
 
 
 

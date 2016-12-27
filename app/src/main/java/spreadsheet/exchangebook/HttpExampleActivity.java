@@ -2,6 +2,7 @@ package spreadsheet.exchangebook;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -12,7 +13,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.SharedPreferences;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,11 +26,11 @@ import java.net.URLEncoder;
 
 public class HttpExampleActivity extends Activity {
     private static final String DEBUG_TAG = "HttpExample";
+    private final String LAST_SYNC_VALUE = "LastSync";
+    private final String PREFERENCES_NAME = "SyncSettings";
     DictionaryDBHelper db; //обьявить переменную
     private TextView textsync;
     private Button buttonsync;
-    private final String LAST_SYNC_VALUE = "LastSync";
-    private final String PREFERENCES_NAME = "SyncSettings";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,27 +39,6 @@ public class HttpExampleActivity extends Activity {
         textsync = (TextView) findViewById(R.id.textsync);
         buttonsync = (Button) findViewById(R.id.buttonsync);
         db = new DictionaryDBHelper(this);//создать экземпляр класса дб
-        String json = "";
-
-        int count = db.numberOfOperationsRows();
-
-        SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
-        int lastSyncValue = prefs.getInt(LAST_SYNC_VALUE, 1);
-
-        for (int x = lastSyncValue; x <= count; x = x + 1) {
-
-            ExchangeOperation exchangeOperation = db.getDataById(x);
-
-            json += exchangeOperation.toJSON();
-
-            if (x < count) {
-                json = json + ",";
-            }
-        }
-
-        json = "{\"operations\": [" + json + "]}";
-
-        final String data = encodeData(json);
 
         //final String domain = "192.168.1.3:8080";
         //final String domain = "api.dev.exchange.dmitriy.in.ua";
@@ -70,6 +49,26 @@ public class HttpExampleActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+                int lastSyncValue = prefs.getInt(LAST_SYNC_VALUE, 1);
+                String json = "";
+
+                int count = db.numberOfOperationsRows();
+
+                for (int x = lastSyncValue; x <= count; x = x + 1) {
+
+                    ExchangeOperation exchangeOperation = db.getDataById(x);
+
+                    json += exchangeOperation.toJSON();
+
+                    if (x < count) {
+                        json = json + ",";
+                    }
+                }
+
+                json = "{\"operations\": [" + json + "]}";
+
+                final String data = encodeData(json);
                 ConnectivityManager connMgr = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -84,7 +83,7 @@ public class HttpExampleActivity extends Activity {
 
     protected String encodeData(String data) {
 
-        String encoded = "";
+        String encoded;
 
         try {
             encoded = URLEncoder.encode(data, "UTF-8");
@@ -97,19 +96,22 @@ public class HttpExampleActivity extends Activity {
 
     class RequestTask extends AsyncTask<String, String, String> {
 
-        public String readIt(InputStream stream, int len) throws IOException {
-            Reader reader = null;
-            reader = new InputStreamReader(stream, "UTF-8");
-            char[] buffer = new char[len];
-            reader.read(buffer);
-            return new String(buffer);
+        String readIt(InputStream stream) throws IOException {
+            final int bufferSize = 1024;
+            final char[] buffer = new char[bufferSize];
+            final StringBuilder out = new StringBuilder();
+            Reader in = new InputStreamReader(stream, "UTF-8");
+            for (; ; ) {
+                int rsz = in.read(buffer, 0, buffer.length);
+                if (rsz < 0)
+                    break;
+                out.append(buffer, 0, rsz);
+            }
+            return out.toString();
         }
 
         private String downloadUrl(String myurl, String payload) throws IOException {
             InputStream is = null;
-            // Only display the first 500 characters of the retrieved
-            // web page content.
-            int len = 500;
 
             try {
                 URL url = new URL(myurl);
@@ -124,7 +126,7 @@ public class HttpExampleActivity extends Activity {
                 conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
                 OutputStream os = conn.getOutputStream();
-                os.write(payload.toString().getBytes("UTF-8"));
+                os.write(payload.getBytes("UTF-8"));
                 os.close();
 
                 //conn.addRequestProperty("Accept-Encoding", "gzip");
@@ -137,8 +139,7 @@ public class HttpExampleActivity extends Activity {
                 is = conn.getInputStream();
 
                 // Convert the InputStream into a string
-                String contentAsString = readIt(is, len);
-                return contentAsString;
+                return readIt(is);
 
                 // Makes sure that the InputStream is closed after the app is
                 // finished using it.
