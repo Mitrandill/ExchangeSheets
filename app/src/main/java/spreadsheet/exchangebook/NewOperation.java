@@ -85,7 +85,7 @@ public class NewOperation extends Activity {
         this.setTitle(R.string.new_exchange);
 
         //адаптер
-        final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN"};
+        final String[] CurrencyNames = {"EUR", "USD", "RUB", "GBP", "PLN"};
 
         // адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, CurrencyNames);

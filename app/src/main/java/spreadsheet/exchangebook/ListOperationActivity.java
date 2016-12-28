@@ -47,7 +47,7 @@ public class ListOperationActivity extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-        final String[] CurrencyNames = {"UAH", "EUR", "USD", "RUB", "GBP", "PLN", " "};
+        final String[] CurrencyNames = {"EUR", "USD", "RUB", "GBP", "PLN", " "};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyNames);
@@ -66,21 +66,18 @@ public class ListOperationActivity extends Activity {
                                        int position, long id) {
                 switch (position) {
                     case 0:
-                        mAdapter.setCurrentFilter("UAH");
-                        break;
-                    case 1:
                         mAdapter.setCurrentFilter("EUR");
                         break;
-                    case 2:
+                    case 1:
                         mAdapter.setCurrentFilter("USD");
                         break;
-                    case 3:
+                    case 2:
                         mAdapter.setCurrentFilter("RUB");
                         break;
-                    case 4:
+                    case 3:
                         mAdapter.setCurrentFilter("GBP");
                         break;
-                    case 5:
+                    case 4:
                         mAdapter.setCurrentFilter("PLN");
                         break;
                     default:
