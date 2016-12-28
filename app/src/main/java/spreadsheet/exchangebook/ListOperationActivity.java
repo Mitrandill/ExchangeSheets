@@ -10,11 +10,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class ListOperationActivity extends Activity {
 
     DictionaryDBHelper db;
+    EditText fromDate;
+
+
 
     public void selectCategory(View view) {
         Intent intent = new Intent(this, MainMenuActivity.class);
@@ -28,6 +32,8 @@ public class ListOperationActivity extends Activity {
         setContentView(R.layout.activity_list_operations);
         db = new DictionaryDBHelper(this);
 
+        fromDate = (EditText) findViewById(R.id.item_layout_date2);
+        fromDate.setText("");
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.OperationsList);
 
@@ -109,9 +115,9 @@ public class ListOperationActivity extends Activity {
                                        int position, long id) {
                 switch (position) {
                     case 0:
- /*                       mAdapter.setCurrentOrder("from");
+                        mAdapter.setCurrentOrder("from");
                         break;
-  */
+
                     case 1:
                         mAdapter.setCurrentOrder("to");
                         break;

@@ -30,7 +30,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         this.db = db;
         this.parent = parent;
         this.currentOrder = "date";
-        this.currentFilter = "to";
+        this.currentFilter = " ";
 
     }
 
