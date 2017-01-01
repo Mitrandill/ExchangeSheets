@@ -26,12 +26,6 @@ public class MainMenuActivity extends Activity {
         startActivity(intent);
     }
 
-    public void selectsync(View view) {
-        Intent intent = new Intent(this, SyncActivity.class);
-        startActivity(intent);
-    }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -67,15 +61,6 @@ public class MainMenuActivity extends Activity {
                 selectFirst(view);
             }
         });
-
-        Button buttonsync = (Button) findViewById(R.id.button_sync_select);
-        buttonsync.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectsync(view);
-            }
-        });
-
 
         this.setTitle(getString(R.string.selection_menu));
     }

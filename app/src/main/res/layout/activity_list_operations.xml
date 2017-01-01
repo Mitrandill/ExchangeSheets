@@ -34,7 +34,9 @@
                 android:id="@+id/item_layout_date2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12 ltrf,hz 2016" />
+                android:calendarViewShown="false"
+                android:spinnersShown="false"
+                android:text="12/04/2016" />
 
             <Spinner
 
@@ -72,7 +74,7 @@
             android:weightSum="1">
 
             <TextView
-                android:id="@+id/item_layout_date2"
+                android:id="@+id/item_layout_date_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/DATE_TIME" />

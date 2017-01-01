@@ -34,33 +34,33 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:text="Операция"
-                android:textSize="34dp"/>
+                android:textSize="34sp" />
 
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="390dp"
+                android:layout_marginRight="390dp"
                 android:width="50dp"
                 android:contextClickable="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="390dp"
-                android:layout_marginEnd="390dp"
                 android:minHeight="47dp" />
 
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="134dp"
+                android:layout_marginRight="134dp"
+                android:layout_toLeftOf="@+id/spinner"
+                android:layout_toStartOf="@+id/spinner"
                 android:width="50dp"
                 android:contextClickable="true"
                 android:gravity="right|start"
-                android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/spinner"
-                android:layout_toStartOf="@+id/spinner"
-                android:layout_marginRight="134dp"
-                android:layout_marginEnd="134dp"
                 android:minHeight="47dp" />
 
 
@@ -68,11 +68,12 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_weight="0.08"
-            android:layout_height="35dp">
+            android:layout_height="35dp"
+            android:layout_weight="0.08">
 
             <TextView
                 android:id="@+id/amountText"
+                android:layout_width="250dp"
                 android:layout_height="match_parent"
                 android:layout_alignBaseline="@+id/amountValue"
                 android:layout_alignBottom="@+id/amountValue"
@@ -81,19 +82,18 @@
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="Валюта"
-                android:textSize="44sp"
-                android:layout_width="250dp" />
+                android:textSize="44sp" />
 
             <EditText
 
                 android:id="@+id/amountValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:text="12345"
                 android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/amountText"
                 android:layout_toRightOf="@+id/amountText"
-                android:layout_toEndOf="@+id/amountText" />
+                android:inputType="numberDecimal"
+                android:text="12345" />
 
         </RelativeLayout>
 
@@ -106,11 +106,11 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="Гривна"
-                android:textSize="44dp"
-                android:layout_alignParentTop="true" />
+                android:textSize="44sp" />
 
             <EditText
 
@@ -128,8 +128,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="26dp"
-            android:layout_weight="0.04"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="25dp"
+            android:layout_weight="0.04">
 
             <TextView
                 android:id="@+id/textView5"
@@ -139,7 +139,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:text="Коментарии"
-                android:textSize="24dp" />
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -159,31 +159,50 @@
                     android:id="@+id/amountValue3"
                     android:layout_width="157dp"
                     android:layout_height="98dp"
-                    android:background="@drawable/edittextstyle"
-
-                    android:text="44 1 ваш текс 1"
                     android:layout_weight="0.30"
+
+                    android:background="@drawable/edittextstyle"
+                    android:text="44 1 ваш текс 1"
                     />
 
                 <Button
                     android:id="@+id/Save"
                     android:layout_width="149dp"
                     android:layout_height="wrap_content"
-                    android:onClick="onClick"
                     android:text="Сохранить" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="96dp">
+            android:layout_height="140dp">
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="157dp"
                 android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:text="@string/Back" />
+
+            <Button
+                android:id="@+id/new_operation_sync_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button"
+                android:layout_centerHorizontal="true"
+                android:text="SYNC" />
+
+            <TextView
+                android:id="@+id/new_operation_sync_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_operation_sync_button"
+                android:layout_centerHorizontal="true"
+                android:text="No Sync Yet" />
         </RelativeLayout>
 
 

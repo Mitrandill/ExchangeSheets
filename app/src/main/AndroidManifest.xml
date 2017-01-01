@@ -22,7 +22,6 @@
         <activity android:name=".ListOperationActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".Youroperation" />
-        <activity android:name=".SyncActivity" />
     </application>
 
 </manifest>
