@@ -188,7 +188,8 @@
         android:weightSum="1"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="300dp">
 
         <TextView
             android:id="@+id/youroperation_to_value_comment"
@@ -197,11 +198,12 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:gravity="left"
+            android:background="@drawable/edittextstyle"
             android:inputType="textPersonName"
             android:text="comment"
             android:textSize="34sp"
             android:layout_width="1182dp"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="80dp" />
 
 
     </LinearLayout>

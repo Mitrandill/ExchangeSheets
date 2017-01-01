@@ -84,14 +84,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/twocurrency"
-                android:layout_weight="0.09"
+                android:layout_weight="0.07"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/item_layout_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.32"
+                android:layout_weight="0.28"
                 android:text="@string/sum"
                 android:textSize="30sp" />
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/twocourse"
                 android:textSize="30sp"
-                android:layout_weight="0.17" />
+                android:layout_weight="0.21" />
 
             <TextView
                 android:id="@+id/item_layout_UAH"
