@@ -34,7 +34,7 @@ public class ListOperationActivity extends Activity {
         setContentView(R.layout.activity_list_operations);
         db = new DictionaryDBHelper(this);
 
-        fromDate = (EditText) findViewById(R.id.item_layout_date2);
+        fromDate = (EditText) findViewById(R.id.item_layout_date3);
         fromDate.setText("");
 
         fromDate.setOnClickListener(new View.OnClickListener() {

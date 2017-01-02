@@ -21,10 +21,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/textView4"
@@ -77,7 +74,7 @@
                 android:layout_alignParentStart="true"
                 android:width="100dp"
                 android:elevation="0dp"
-                android:text="Валюта"
+                android:text="@string/currency"
                 android:textSize="24sp" />
 
             <Spinner
@@ -105,7 +102,7 @@
                 android:layout_alignTop="@+id/amountUAH"
                 android:width="100dp"
                 android:elevation="0dp"
-                android:text="Гривна"
+                android:text="@string/UAH"
                 android:textSize="24sp" />
 
             <EditText
@@ -133,8 +130,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-
-                android:text="Коментарии" />
+                android:text="@string/Comment" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -162,7 +158,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:onClick="onClick"
-                    android:text="Сохранить" />
+                    android:text="@string/SAVE" />
             </LinearLayout>
         </RelativeLayout>
 

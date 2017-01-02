@@ -19,12 +19,12 @@
             android:id="@+id/youroperation_to_value_currency"
             android:layout_width="91dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="500dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="0.16"
             android:gravity="right"
             android:text="@string/currency"
-            android:textSize="44sp"
-            android:layout_weight="0.16"
-            android:layout_marginLeft="500dp"
-            android:layout_marginTop="50dp" />
+            android:textSize="44sp" />
 
         <!--
            android:id="@+id/textView6"
@@ -49,9 +49,10 @@
             android:id="@+id/textView7"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:text="    Дата"
-            android:textSize="44sp"
-            android:layout_weight="1.13" />
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1.16"
+            android:text="@string/Date"
+            android:textSize="44sp" />
 
         <TextView
             android:id="@+id/youroperation_date"
@@ -75,26 +76,27 @@
             android:id="@+id/textView10"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:text="    Валюта"
-            android:textSize="44sp"
-            android:layout_weight="0.22" />
+            android:layout_marginLeft="30dp"
+            android:layout_weight="0.20"
+            android:text="@string/currency"
+            android:textSize="44sp" />
 
         <TextView
             android:id="@+id/youroperation_from_value"
             android:layout_width="98dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.15"
             android:text="1234578.6"
-            android:textSize="44sp"
-            android:layout_weight="0.15" />
+            android:textSize="44sp" />
 
         <TextView
             android:id="@+id/youroperation_from_value_currency"
             android:layout_width="91dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.14"
             android:gravity="right"
             android:text="@string/currency"
-            android:textSize="44sp"
-            android:layout_weight="0.14" />
+            android:textSize="44sp" />
 
     </LinearLayout>
 
@@ -111,9 +113,10 @@
             android:id="@+id/textView11"
             android:layout_width="156dp"
             android:layout_height="wrap_content"
-            android:text="    Гривна"
-            android:textSize="44sp"
-            android:layout_weight="0.22" />
+            android:layout_marginLeft="30dp"
+            android:layout_weight="0.20"
+            android:text="@string/UAH"
+            android:textSize="44sp" />
 
         <TextView
             android:id="@+id/youroperation_to_UAH"
@@ -137,9 +140,10 @@
             android:id="@+id/textView12"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:text="    Курс"
-            android:textSize="44sp"
-            android:layout_weight="0.21" />
+            android:layout_marginLeft="30dp"
+            android:layout_weight="0.19"
+            android:text="@string/COURSE"
+            android:textSize="44sp" />
 
         <TextView
             android:id="@+id/youroperation_curse"
@@ -165,8 +169,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="      Комментарии :"
             android:paddingLeft="30dp"
+            android:text="@string/Comment1"
             android:textSize="44sp" />
 
 
@@ -184,26 +188,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="300dp">
+        android:layout_centerVertical="true"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/youroperation_to_value_comment"
+            android:layout_width="1182dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout5"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:gravity="left"
+            android:layout_marginTop="80dp"
             android:background="@drawable/edittextstyle"
+            android:gravity="left"
             android:inputType="textPersonName"
-            android:text="comment"
-            android:textSize="34sp"
-            android:layout_width="1182dp"
-            android:layout_marginTop="80dp" />
+            android:text="@string/Comment"
+            android:textSize="34sp" />
 
 
     </LinearLayout>

@@ -32,7 +32,7 @@
                 android:textSize="24sp" />
 
             <EditText
-                android:id="@+id/item_layout_date2"
+                android:id="@+id/item_layout_date3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12 ltrf,hz 2016" />
@@ -75,16 +75,16 @@
                 android:id="@+id/item_layout_date2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/DATE_TIME"
                 android:layout_weight="0.11"
+                android:text="@string/DATE_TIME"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/item_layout_2currency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/twocurrency"
                 android:layout_weight="0.07"
+                android:text="@string/twocurrency"
                 android:textSize="30sp" />
 
             <TextView
@@ -99,16 +99,16 @@
                 android:id="@+id/item_layout_course"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.21"
                 android:text="@string/twocourse"
-                android:textSize="30sp"
-                android:layout_weight="0.21" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/item_layout_UAH"
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
-                android:text="@string/UAH"
                 android:layout_weight="0.09"
+                android:text="@string/UAH"
                 android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>

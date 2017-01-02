@@ -31,7 +31,7 @@
                 android:text="@string/Date" />
 
             <EditText
-                android:id="@+id/item_layout_date2"
+                android:id="@+id/item_layout_date3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:calendarViewShown="false"

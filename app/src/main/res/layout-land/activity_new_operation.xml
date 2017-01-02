@@ -33,7 +33,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="Операция"
+                android:text="@string/Operation"
                 android:textSize="34sp" />
 
             <Spinner
@@ -109,7 +109,7 @@
                 android:layout_alignParentTop="true"
                 android:width="100dp"
                 android:elevation="0dp"
-                android:text="Гривна"
+                android:text="@string/UAH"
                 android:textSize="44sp" />
 
             <EditText
@@ -138,7 +138,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:text="Коментарии"
+                android:text="@string/Comment"
                 android:textSize="24sp" />
         </RelativeLayout>
 
@@ -169,7 +169,7 @@
                     android:id="@+id/Save"
                     android:layout_width="149dp"
                     android:layout_height="wrap_content"
-                    android:text="Сохранить" />
+                    android:text="@string/SAVE" />
             </LinearLayout>
         </RelativeLayout>
 

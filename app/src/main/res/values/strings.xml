@@ -30,4 +30,9 @@
     <string name="item_layout_date">Date</string>
     <string name="layout_item_button2">View</string>
     <string name="ukranian_hgrivna">UAH</string>
+    <string name="SAVE">SAVE</string>
+    <string name="COURSE">COURSE</string>
+    <string name="Comment1">Comment:</string>
+    <string name="Operation">Operation</string>
+    <string name="settings">settings</string>
 </resources>

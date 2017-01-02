@@ -31,4 +31,9 @@
     <string name="twocourse">КУРС</string>
     <string name="UAH">Гривна</string>
     <string name="title_activity_http_example">Обновить сервер</string>
+    <string name="SAVE">Сохранить</string>
+    <string name="COURSE">Курс</string>
+    <string name="Comment1">Комментарии:</string>
+    <string name="Operation">Операция</string>
+    <string name="settings">Настройки</string>
 </resources>

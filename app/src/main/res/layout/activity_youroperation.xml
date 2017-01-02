@@ -18,6 +18,7 @@
             android:id="@+id/youroperation_to_value_currency"
             android:layout_width="91dp"
             android:layout_height="35dp"
+            android:layout_marginLeft="150dp"
             android:gravity="right"
             android:text="@string/currency"
             android:textSize="18sp" />
@@ -44,7 +45,8 @@
             android:id="@+id/textView7"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:text="    Дата"
+            android:layout_marginLeft="30dp"
+            android:text="@string/Date"
             android:textSize="24sp" />
 
         <TextView
@@ -69,7 +71,8 @@
             android:id="@+id/textView10"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:text="    Валюта"
+            android:layout_marginLeft="30dp"
+            android:text="@string/currency"
             android:textSize="24sp" />
 
         <TextView
@@ -102,7 +105,8 @@
             android:id="@+id/textView11"
             android:layout_width="156dp"
             android:layout_height="wrap_content"
-            android:text="    Гривна"
+            android:layout_marginLeft="30dp"
+            android:text="@string/UAH"
             android:textSize="24sp" />
 
         <TextView
@@ -127,7 +131,8 @@
             android:id="@+id/textView12"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:text="    Курс"
+            android:layout_marginLeft="30dp"
+            android:text="@string/COURSE"
             android:textSize="24sp" />
 
         <TextView
@@ -154,7 +159,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="      Комментарии :" />
+            android:layout_marginLeft="30dp"
+            android:text="@string/Comment1" />
 
 
     </LinearLayout>
@@ -177,7 +183,7 @@
             android:layout_gravity="center"
             android:gravity="left"
             android:inputType="textPersonName"
-            android:text="comment"
+            android:text="@string/Comment"
             android:textSize="24sp" />
 
 
