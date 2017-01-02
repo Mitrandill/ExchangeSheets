@@ -77,34 +77,40 @@
                 android:id="@+id/item_layout_date_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.14"
                 android:text="@string/DATE_TIME" />
 
             <TextView
                 android:id="@+id/item_layout_2currency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/twocurrency" />
+                android:text="@string/twocurrency"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/item_layout_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.35"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.30"
                 android:text="@string/sum"
+                android:textAlignment="viewStart"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/item_layout_course"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.20"
                 android:text="@string/twocourse"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/item_layout_UAH"
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
-                android:text="@string/UAH" />
+                android:text="@string/UAH"
+                android:textAlignment="viewEnd" />
         </LinearLayout>
     </LinearLayout>
 

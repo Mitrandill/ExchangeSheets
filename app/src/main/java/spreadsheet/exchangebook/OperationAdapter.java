@@ -65,6 +65,8 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
         result = num1 / num2;
 
+        String res = String.format("%.2f", result);
+
         final Integer selected = el.getId();
         holder.itemcontainer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +89,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         holder.fromCurrency.setText(el.getFromCurrency());
         holder.toUAH.setText(Double.toString((double) el.gettoUAH() / 100.0));
         holder.created.setText(formatTo.format(date));
-        holder.curse.setText(Double.toString(result));
+        holder.curse.setText(toString().format(res));
     }
 
     @Override

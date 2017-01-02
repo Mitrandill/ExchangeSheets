@@ -112,7 +112,6 @@ public class NewOperation extends Activity {
         toUAH.setText("");
         comment.setText("");
         doSync();
-
     }
 
     @Override
