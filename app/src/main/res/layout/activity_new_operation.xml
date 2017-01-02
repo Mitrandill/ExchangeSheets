@@ -64,7 +64,8 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
-                android:textAlignment="viewEnd" />
+                android:textAlignment="viewEnd"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/amountText"
@@ -118,7 +119,8 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="5"
-                android:textAlignment="viewEnd" />
+                android:textAlignment="viewEnd"
+                android:textSize="24sp" />
 
         </RelativeLayout>
 
@@ -153,16 +155,20 @@
                     android:id="@+id/amountValue3"
                     android:layout_width="157dp"
                     android:layout_height="98dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edittextstyle"
                     android:inputType="textMultiLine"
-                    android:text="44 1 ваш текс 1" />
+                    android:text="44 1 ваш текс 1"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/Save"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
                     android:onClick="onClick"
-                    android:text="@string/SAVE" />
+                    android:text="@string/SAVE"
+                    android:textSize="24sp" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -179,7 +185,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="@string/Back" />
+                android:text="@string/Back"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/new_operation_sync_button"
@@ -187,7 +194,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/button"
                 android:layout_centerHorizontal="true"
-                android:text="SYNC" />
+                android:layout_marginTop="10dp"
+                android:text="SYNC"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/new_operation_sync_text"
@@ -196,6 +205,7 @@
                 android:layout_below="@+id/new_operation_sync_button"
                 android:layout_centerHorizontal="true"
                 android:text="TextView"
+                android:textSize="24sp"
                 tools:text="No Sync Yet" />
         </RelativeLayout>
 

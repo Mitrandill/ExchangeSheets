@@ -34,7 +34,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:text="@string/Operation"
-                android:textSize="34sp" />
+                android:textSize="44sp" />
 
             <Spinner
                 android:id="@+id/spinner"
@@ -95,7 +95,8 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
-                android:textAlignment="viewEnd" />
+                android:textAlignment="viewEnd"
+                android:textSize="44sp" />
 
         </RelativeLayout>
 
@@ -119,13 +120,14 @@
                 android:id="@+id/amountUAH"
                 android:layout_width="115dp"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/textView2"
                 android:layout_toRightOf="@+id/textView2"
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
-                android:textAlignment="viewEnd" />
+                android:textAlignment="viewEnd"
+                android:textSize="44sp" />
 
         </RelativeLayout>
 
@@ -133,17 +135,18 @@
             android:layout_width="match_parent"
             android:layout_height="26dp"
             android:layout_marginTop="25dp"
-            android:layout_weight="0.04">
+            android:layout_weight="0.09">
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:text="@string/Comment"
-                android:textSize="24sp" />
+                android:textSize="36sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -156,41 +159,50 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
                 <EditText
                     android:id="@+id/amountValue3"
-                    android:layout_width="157dp"
-                    android:layout_height="98dp"
-                    android:layout_weight="0.30"
+                    android:layout_width="300dp"
 
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="39dp"
+                    android:layout_weight="0.10"
                     android:background="@drawable/edittextstyle"
                     android:text="44 1 ваш текс 1"
-                    />
+                    android:textSize="36sp" />
 
                 <Button
                     android:id="@+id/Save"
                     android:layout_width="149dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/SAVE" />
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="0.17"
+                    android:text="@string/SAVE"
+                    android:textSize="44sp" />
             </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp">
+            android:layout_height="140dp"
+            android:layout_weight="0.31">
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="157dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="@string/Back" />
+                android:layout_marginTop="10dp"
+                android:text="@string/Back"
+                android:textSize="44sp" />
 
             <Button
                 android:id="@+id/new_operation_sync_button"
@@ -198,7 +210,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/button"
                 android:layout_centerHorizontal="true"
-                android:text="SYNC" />
+                android:layout_marginTop="10dp"
+                android:text="SYNC"
+                android:textSize="44sp" />
 
             <TextView
                 android:id="@+id/new_operation_sync_text"
@@ -206,7 +220,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/new_operation_sync_button"
                 android:layout_centerHorizontal="true"
-                android:text="No Sync Yet" />
+                android:layout_marginTop="10dp"
+                android:text="No Sync Yet"
+                android:textSize="44sp" />
         </RelativeLayout>
 
 
