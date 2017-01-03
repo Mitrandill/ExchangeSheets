@@ -12,6 +12,7 @@ import android.widget.Button;
 public class FirstStepActivity extends Activity {
 
     static final String SubCategoryStateName = "category";
+    Button exitButton;
 
     public void selectCategory(View view) {
         Intent intent = new Intent(this, MainMenuActivity.class);
@@ -27,6 +28,14 @@ public class FirstStepActivity extends Activity {
             @Override
             public void onClick(View view) {
                 selectCategory(view);
+            }
+        });
+
+        exitButton = (Button) findViewById(R.id.Exit);
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doExit();
             }
         });
 
@@ -52,5 +61,17 @@ public class FirstStepActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+
+    protected void doExit() {
+        this.finish();
+        moveTaskToBack(true);
+
+        super.onDestroy();
+
+
+        System.exit(0);
+
     }
 }

@@ -43,9 +43,9 @@ public class ListOperationActivity extends Activity {
                 new DatePickerDialog(ListOperationActivity.this, 0, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        fromDate.setText(Integer.toString(year) + "/" + Integer.toString(monthOfYear) + "/" + Integer.toString(dayOfMonth));
+                        fromDate.setText(Integer.toString(year) + "/" + Integer.toString(monthOfYear + 1) + "/" + Integer.toString(dayOfMonth));
                     }
-                }, 2015, 2, 26).show();
+                }, 2017, 1, 1).show();
             }
         });
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.OperationsList);
