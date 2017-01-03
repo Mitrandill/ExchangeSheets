@@ -22,10 +22,10 @@
     <string name="Comment">Comment</string>
     <string name="DATE_TIME">Date Time</string>
     <string name="Date">Date</string>
-    <string name="twocurrency">CURRENCY</string>
-    <string name="sum">SUM</string>
-    <string name="twocourse">COURSE</string>
-    <string name="UAH">UAH</string>
+    <string name="twocurrency">Currency</string>
+    <string name="sum">Sum</string>
+    <string name="twocourse">Course</string>
+    <string name="UAH">Uah</string>
     <string name="title_activity_http_example">HttpExampleActivity</string>
     <string name="item_layout_date">Date</string>
     <string name="layout_item_button2">View</string>
