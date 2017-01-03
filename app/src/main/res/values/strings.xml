@@ -35,9 +35,8 @@
     <string name="Comment1">Comment:</string>
     <string name="Operation">Operation</string>
     <string name="settings">settings</string>
-
-
-    <string name="exit">Выход</string>
+    <string name="exit">Exit</string>
+    <string name="SAVE">Save</string>
 
 
 </resources>

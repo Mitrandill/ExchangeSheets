@@ -36,4 +36,6 @@
     <string name="Comment1">Комментарии:</string>
     <string name="Operation">Операция</string>
     <string name="settings">Настройки</string>
+    <string name="exit">Выход</string>
+    <string name="Save">Сохранить</string>
 </resources>
