@@ -36,33 +36,6 @@
                 android:text="@string/Operation"
                 android:textSize="44sp" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="390dp"
-                android:layout_marginRight="390dp"
-                android:width="50dp"
-                android:contextClickable="true"
-                android:minHeight="47dp" />
-
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="134dp"
-                android:layout_marginRight="134dp"
-                android:layout_toLeftOf="@+id/spinner"
-                android:layout_toStartOf="@+id/spinner"
-                android:width="50dp"
-                android:contextClickable="true"
-                android:gravity="right|start"
-                android:minHeight="47dp" />
-
 
         </RelativeLayout>
 
@@ -87,16 +60,29 @@
             <EditText
 
                 android:id="@+id/amountValue"
-                android:layout_width="115dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/amountText"
                 android:layout_toRightOf="@+id/amountText"
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
                 android:textAlignment="viewEnd"
                 android:textSize="44sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="434dp"
+                android:layout_marginRight="434dp"
+                android:width="50dp"
+                android:contextClickable="true"
+                android:minHeight="47dp" />
 
         </RelativeLayout>
 
@@ -118,7 +104,7 @@
             <EditText
 
                 android:id="@+id/amountUAH"
-                android:layout_width="115dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/textView2"
@@ -128,6 +114,21 @@
                 android:text="12345"
                 android:textAlignment="viewEnd"
                 android:textSize="44sp" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="430dp"
+                android:layout_marginRight="430dp"
+                android:width="50dp"
+                android:contextClickable="true"
+                android:gravity="right|start"
+                android:minHeight="47dp" />
 
         </RelativeLayout>
 
@@ -189,30 +190,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="140dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="0.31">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="157dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="10dp"
-                android:text="@string/Back"
-                android:textSize="44sp" />
-
-            <Button
-                android:id="@+id/new_operation_sync_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/button"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:text="SYNC"
-                android:textSize="44sp" />
 
             <TextView
                 android:id="@+id/new_operation_sync_text"
@@ -222,6 +201,26 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="No Sync Yet"
+                android:textSize="44sp" />
+
+            <Button
+                android:id="@+id/new_operation_sync_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="29dp"
+                android:text="SYNC"
+                android:textSize="44sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="157dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_operation_sync_text"
+                android:layout_centerHorizontal="true"
+                android:text="@string/Back"
                 android:textSize="44sp" />
         </RelativeLayout>
 
