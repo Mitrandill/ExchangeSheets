@@ -24,6 +24,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
     private Activity parent;
     private String currentOrder;
     private String currentFilter;
+    private String currentTop;
 
     OperationAdapter(DictionaryDBHelper db, Activity parent) {
 
@@ -31,6 +32,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         this.parent = parent;
         this.currentOrder = "date";
         this.currentFilter = " ";
+        this.currentTop = " ";
 
     }
 
@@ -56,7 +58,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ExchangeOperation el = db.getDataByPosition(position, this.currentOrder, this.currentFilter);
+        ExchangeOperation el = db.getDataByPosition(position, this.currentOrder, this.currentFilter); //, this.currentTop
         double num1;
         double num2;
         double result;
@@ -97,8 +99,13 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         return db.numberOfOperationsRows(this.currentFilter);
     }
 
+
     void setCurrentOrder(String currentOrder) {
         this.currentOrder = currentOrder;
+    }
+
+    void setCurrentTop(String currentTop) {
+        this.currentTop = currentTop;
     }
 
     void setCurrentFilter(String currentFilter) {

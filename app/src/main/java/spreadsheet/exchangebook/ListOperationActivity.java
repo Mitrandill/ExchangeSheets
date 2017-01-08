@@ -131,9 +131,10 @@ public class ListOperationActivity extends Activity {
                     default: // case 1:
                         mAdapter.setCurrentOrder("to");
                         break;
-                 /*   default:
+               /*     default:
                         mAdapter.setCurrentOrder("date");
-                        break;  */
+                        break;
+                          */
                 }
                 mAdapter.notifyDataSetChanged();
                 recyclerView.invalidate();
@@ -143,6 +144,47 @@ public class ListOperationActivity extends Activity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
+
+        final String[] CurrencyTop = {"Покупка", "Продажа"};
+
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyTop);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        final Spinner spinnerTop = (Spinner) findViewById(R.id.spinner3);
+        spinnerTop.setAdapter(adapter3);
+
+        spinnerTop.setPrompt("Top Currency");
+
+        spinnerTop.setSelection(1);
+
+        spinnerTop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                switch (position) {
+
+                    case 0:
+                        mAdapter.setCurrentTop("Покупка");
+                        break;
+
+                    case 1:
+                        mAdapter.setCurrentTop("Продажа");
+                        break;
+                    default:
+                        mAdapter.setCurrentTop(" ");
+                        break;
+
+
+                }
+                mAdapter.notifyDataSetChanged();
+                recyclerView.invalidate();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
+
 
         Button button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {

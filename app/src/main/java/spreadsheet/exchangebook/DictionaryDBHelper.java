@@ -111,10 +111,16 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String order = "";
         String filter_string = "";
+
         if (!filter.equals("")) {
-            filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
+            filter_string = "select count(*) from " + DATABASE_EXCHANGE + " where" + DATABASE_FROM_CURRENCY + " = 'usd' AND " + DATABASE_TO_CURRENCY + " = 'Покупка' ";
+
+            //" where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
 
         }
+
+
+
         if ("date".equals(order_by)) {
             order = DATABASE_CREATED;
         } else if ("from".equals(order_by)) {
@@ -221,12 +227,13 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
             int numRows = (int) DatabaseUtils.queryNumEntries(db, DATABASE_EXCHANGE);
             return numRows;
         } else {
-            String filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
-            Cursor mCount = db.rawQuery("select count(*) from " + DATABASE_EXCHANGE + filter_string, null);
+            String filter_string = " where " + DATABASE_FROM_CURRENCY + " = 'usd' AND " + DATABASE_TO_CURRENCY + " = 'Покупка' ";//" where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
+            Cursor mCount = db.rawQuery("select count(*)  from " + DATABASE_EXCHANGE + filter_string, null);
             mCount.moveToFirst();
             int numRows = mCount.getInt(0);
             mCount.close();
             return numRows;
         }
     }
+
 }
