@@ -60,7 +60,7 @@ public class ListOperationActivity extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-        final String[] CurrencyNames = {"EUR", "USD", "RUB", "GBP", "PLN", " "};
+        final String[] CurrencyNames = {"EUR", "USD", "RUB", "GBP", "PLN", ""};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyNames);
@@ -112,14 +112,14 @@ public class ListOperationActivity extends Activity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final Spinner spinnerTo = (Spinner) findViewById(R.id.spinner2);
-        spinnerTo.setAdapter(adapter2);
+        final Spinner spinnerToOperation = (Spinner) findViewById(R.id.spinner2);
+        spinnerToOperation.setAdapter(adapter2);
 
-        spinnerTo.setPrompt("To Currency");
+        spinnerToOperation.setPrompt("To Operation");
 
-        spinnerTo.setSelection(1);
+        spinnerToOperation.setSelection(1);
 
-        spinnerTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerToOperation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
@@ -128,13 +128,13 @@ public class ListOperationActivity extends Activity {
                         mAdapter.setCurrentOrder("from");
                         break;
 
-                    default: // case 1:
+                    case 1:      //    default:
                         mAdapter.setCurrentOrder("to");
                         break;
-               /*     default:
+                    default:
                         mAdapter.setCurrentOrder("date");
                         break;
-                          */
+
                 }
                 mAdapter.notifyDataSetChanged();
                 recyclerView.invalidate();
@@ -145,7 +145,7 @@ public class ListOperationActivity extends Activity {
             }
         });
 
-        final String[] CurrencyTop = {"Покупка", "Продажа"};
+ /*       final String[] CurrencyTop = {"Покупка", "Продажа"};
 
         ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyTop);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -184,7 +184,7 @@ public class ListOperationActivity extends Activity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
-
+*/
 
         Button button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {

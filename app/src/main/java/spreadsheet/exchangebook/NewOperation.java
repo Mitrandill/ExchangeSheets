@@ -64,7 +64,7 @@ public class NewOperation extends Activity {
             checkFieldsForEmpyValues();
         }
     };
-    private Spinner spinnerTo;
+    private Spinner spinnerToOperation;
     private Spinner spinnerFrom;
     private EditText comment;
     private TextView textsync;
@@ -97,12 +97,12 @@ public class NewOperation extends Activity {
         Float ToUAH = Float.parseFloat(toUAH.getText().toString()) * 100;
         int intToUAH = Math.round(ToUAH);
 
-        String strToValueCurrency = CurrencyOperation[spinnerTo.getSelectedItemPosition()];
+        String strTooperation = CurrencyOperation[spinnerToOperation.getSelectedItemPosition()];
         String strComment = comment.getText().toString();
         db.insertExchangeRecordWithHash(intFromValue,
                 strFromValueCurrency,
                 intToUAH,
-                strToValueCurrency,
+                strTooperation,
                 strComment);
 
         Toast toast = Toast.makeText(getApplicationContext(), "ДОБАВЛЕННО", Toast.LENGTH_LONG);
@@ -134,7 +134,7 @@ public class NewOperation extends Activity {
 
         comment = (EditText) findViewById(R.id.amountValue3);
         saveButton = (Button) findViewById(R.id.Save);
-        spinnerTo = (Spinner) findViewById(R.id.spinner2);
+        spinnerToOperation = (Spinner) findViewById(R.id.spinner2);
         Button button = (Button) findViewById(R.id.button);
         spinnerFrom = (Spinner) findViewById(R.id.spinner);
         fromValue = (EditText) findViewById(R.id.amountValue);
@@ -177,10 +177,10 @@ public class NewOperation extends Activity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinnerTo.setAdapter(adapter2);
+        spinnerToOperation.setAdapter(adapter2);
 
-        spinnerTo.setPrompt("To Currency");
-        spinnerTo.setSelection(1);
+        spinnerToOperation.setPrompt("To Operation");
+        spinnerToOperation.setSelection(1);
 
 
         fromValue.setText("");

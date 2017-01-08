@@ -19,7 +19,7 @@ public class ExchangeOperation {
     private Integer fromValue;
     private String fromCurrency;
     private Integer toUAH;
-    private String toCurrency;
+    private String toOperation;
     private String created;
     private String comment;
     private String hash;
@@ -29,7 +29,7 @@ public class ExchangeOperation {
             Integer fromValue,
             String fromCurrency,
             Integer toUAH,
-            String toCurrency,
+            String toOperation,
             String created,
             String hash,
             String comment) {
@@ -40,7 +40,7 @@ public class ExchangeOperation {
         this.fromValue = fromValue;
         this.fromCurrency = fromCurrency;
         this.toUAH = toUAH;
-        this.toCurrency = toCurrency;
+        this.toOperation = toOperation;
         this.created = created;
         this.hash = hash;
         this.comment = comment;
@@ -70,12 +70,12 @@ public class ExchangeOperation {
         this.toUAH = toUAH;
     }
 
-    public String getToCurrency() {
-        return toCurrency;
+    public String getToOperation() {
+        return toOperation;
     }
 
-    public void setToCurrency(String toCurrency) {
-        this.toCurrency = toCurrency;
+    public void setToOperation(String toOperation) {
+        this.toOperation = toOperation;
     }
 
     public String getCreated() {
@@ -158,7 +158,7 @@ public class ExchangeOperation {
         String amountToBuy = "";
         String amountToSell = "";
 
-        if ("Продажа".equals(this.toCurrency)) {
+        if ("Продажа".equals(this.toOperation)) {
             action = "sell";
             amountToBuy = Integer.toString(this.toUAH);
             amountToSell = Integer.toString(this.fromValue);

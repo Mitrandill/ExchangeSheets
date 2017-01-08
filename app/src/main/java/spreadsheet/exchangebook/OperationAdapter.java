@@ -24,7 +24,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
     private Activity parent;
     private String currentOrder;
     private String currentFilter;
-    private String currentTop;
+    //   private String currentTop;
 
     OperationAdapter(DictionaryDBHelper db, Activity parent) {
 
@@ -32,7 +32,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         this.parent = parent;
         this.currentOrder = "date";
         this.currentFilter = " ";
-        this.currentTop = " ";
+        //      this.currentTop = " ";
 
     }
 
@@ -104,10 +104,10 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         this.currentOrder = currentOrder;
     }
 
-    void setCurrentTop(String currentTop) {
-        this.currentTop = currentTop;
-    }
-
+    /*   void setCurrentTop(String currentTop) {
+           this.currentTop = currentTop;
+       }
+   */
     void setCurrentFilter(String currentFilter) {
         this.currentFilter = currentFilter;
     }
