@@ -163,6 +163,22 @@ public class ListOperationActivity extends Activity {
                                        int position, long id) {
                 switch (position) {
 
+
+
+                    case 0:
+                        mAdapter.setCurrentOrder("from");
+                        break;
+
+                    case 1:      //    default:
+                        mAdapter.setCurrentOrder("to");
+                        break;
+                    default:
+                        mAdapter.setCurrentOrder("date");
+                        break;
+
+
+
+
                     case 0:
                         mAdapter.setCurrentTop("Покупка");
                         break;

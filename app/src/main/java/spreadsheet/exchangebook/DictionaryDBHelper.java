@@ -228,7 +228,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
             return numRows;//вернуть количество строчек
         } else { // иначе
             String filter_string = " where " + DATABASE_FROM_CURRENCY + " = 'usd' AND " + DATABASE_TO_OPERATOIN + " = 'Покупка' ";//" where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
-            Cursor mCount = db.rawQuery("select count(*)  from " + DATABASE_EXCHANGE + filter_string, null);// выполнить запрос в бд состоящее из строки в параметр
+            Cursor mCount = db.rawQuery("select count(*) from " + DATABASE_EXCHANGE + filter_string, null);// выполнить запрос в бд состоящее из строки в параметр
             mCount.moveToFirst();// получить первую запись из курсора
             int numRows = mCount.getInt(0);// получить первый столбик
             mCount.close(); // закрыть курсор
