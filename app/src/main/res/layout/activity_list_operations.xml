@@ -41,22 +41,20 @@
 
             <Spinner
 
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
+                android:id="@+id/Currencyspinner"
+                android:layout_width="64dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="61dp"
-                android:layout_marginStart="61dp"
+                android:layout_marginLeft="20dp"
                 android:layout_toEndOf="@+id/textView4"
                 android:layout_toRightOf="@+id/textView4"
-                android:layout_weight="0.24"
                 android:width="50dp"
                 android:contextClickable="true"
                 android:gravity="right|start" />
 
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/OperationSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignBaseline="@+id/amountValue"

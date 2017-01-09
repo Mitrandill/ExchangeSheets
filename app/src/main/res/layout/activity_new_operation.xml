@@ -51,21 +51,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="0.08">
 
             <EditText
 
                 android:id="@+id/amountValue"
-                android:layout_width="95dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/amountText"
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
                 android:textAlignment="viewEnd"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/amountText"
@@ -88,7 +90,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="36dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="36dp"
+                android:layout_toEndOf="@+id/amountValue"
                 android:width="50dp"
                 android:contextClickable="true" />
         </RelativeLayout>
@@ -97,21 +101,10 @@
             android:layout_width="match_parent"
             android:layout_height="56dp">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignTop="@+id/amountUAH"
-                android:width="100dp"
-                android:elevation="0dp"
-                android:text="@string/UAH"
-                android:textSize="24sp" />
-
             <EditText
 
                 android:id="@+id/amountUAH"
-                android:layout_width="95dp"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/textView2"
@@ -120,6 +113,19 @@
                 android:maxLength="9"
                 android:text="5"
                 android:textAlignment="viewEnd"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/amountUAH"
+                android:layout_alignBottom="@+id/amountUAH"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:width="100dp"
+                android:elevation="0dp"
+                android:text="@string/UAH"
                 android:textSize="24sp" />
 
         </RelativeLayout>
