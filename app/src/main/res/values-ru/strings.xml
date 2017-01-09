@@ -19,7 +19,6 @@
     <string name="view_operation">Новая Операция</string>
     <string name="menu_authorization">Авторизация</string>
     <string name="layout_item_button2">Просмотр</string>
-    <string name="title_activity_list2">Лист2</string>
     <string name="View">Просмотр</string>
     <string name="Comment">Комментарии</string>
     <string name="DATE_TIME">Дата Время</string>
@@ -30,7 +29,6 @@
     <string name="ukranian_hgrivna">Гривна</string>
     <string name="twocourse">КУРС</string>
     <string name="UAH">Гривна</string>
-    <string name="title_activity_http_example">Обновить сервер</string>
     <string name="SAVE">Сохранить</string>
     <string name="COURSE">Курс</string>
     <string name="Comment1">Комментарии:</string>

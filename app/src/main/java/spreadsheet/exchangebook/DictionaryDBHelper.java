@@ -32,7 +32,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
     private final static String HEX = "0123456789ABCDEF";
     private Context context;
 
-    public DictionaryDBHelper(Context context) {
+    DictionaryDBHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
         this.context = context;
     }
@@ -42,7 +42,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
      * @param text
      * @return the SHA1 hash or null if an error occurs
      */
-    public static String SHA1(String text) {
+    private static String SHA1(String text) {
 
         try {
 
@@ -63,15 +63,15 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public static String toHex(byte[] buf) {
+    private static String toHex(byte[] buf) {
 
         if (buf == null) return "";
 
         int l = buf.length;
         StringBuffer result = new StringBuffer(2 * l);
 
-        for (int i = 0; i < buf.length; i++) {
-            appendHex(result, buf[i]);
+        for (byte aBuf : buf) {
+            appendHex(result, aBuf);
         }
 
         return result.toString();
@@ -107,33 +107,22 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public ExchangeOperation getDataByPosition(int position, String order_by, String filter) {
+    ExchangeOperation getDataByPosition(int position, String filterOperation, String filterCurrency) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String order = "";
         String filter_string = "";
 
-        if (!filter.equals("")) {
-            filter_string = " where" + DATABASE_FROM_CURRENCY + " = 'usd' AND " + DATABASE_TO_OPERATOIN + " = 'Покупка' ";
-
-            //" where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
-
+        if (!"".equals(filterOperation) && "".equals(filterCurrency)) {
+            filter_string = " where " + DATABASE_TO_OPERATOIN + " = '" + filterOperation + "'";
+        } else if ("".equals(filterOperation) && !"".equals(filterCurrency)) {
+            filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filterCurrency + "'";
+        } else if (!"".equals(filterOperation) && !"".equals(filterCurrency)) {
+            filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filterCurrency + "' AND " + DATABASE_TO_OPERATOIN + " = '" + filterOperation + "' ";
         }
 
-
-
-        if ("date".equals(order_by)) {
-            order = DATABASE_CREATED;
-        } else if ("from".equals(order_by)) {
-            order = DATABASE_FROM_CURRENCY;
-        } else if ("to".equals(order_by)) {
-            order = DATABASE_TO_OPERATOIN;
-        }
         Cursor res = db.rawQuery(
                 "select * from " +
                         DATABASE_EXCHANGE +
                         filter_string +
-                        " order by " +
-                        order +
                         " limit 1 offset ?", new String[]{Integer.toString(position)});
 
         if (res.moveToFirst()) {
@@ -157,7 +146,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public ExchangeOperation getDataById(int position) {
+    ExchangeOperation getDataById(int position) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery(
                 "select * from " +
@@ -187,7 +176,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public long insertExcengeRecord(int from_cents, String from_currency, int to_UAH, String to_operation, String created, String comment, String hash_value) {
+    private long insertExcengeRecord(int from_cents, String from_currency, int to_UAH, String to_operation, String created, String comment, String hash_value) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -201,7 +190,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return db.insert(DATABASE_EXCHANGE, null, contentValues);
     }
 
-    public long insertExchangeRecordWithHash(int from_cents, String from_currency, int to_UAH, String to_operation, String comment) {
+    long insertExchangeRecordWithHash(int from_cents, String from_currency, int to_UAH, String to_operation, String comment) {
         String created = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date());
 
 
@@ -209,7 +198,7 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return this.insertExcengeRecord(from_cents, from_currency, to_UAH, to_operation, created, comment, hash_value);
     }
 
-    public String lastHash() {
+    private String lastHash() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from " + DATABASE_EXCHANGE + " order by " + DATABASE_CREATED + " desc limit 1", new String[]{});
         if (res.moveToFirst()) {
@@ -221,13 +210,19 @@ class DictionaryDBHelper extends SQLiteOpenHelper {
         return "";
     }
 
-    public int numberOfOperationsRows(String filter) {
+    int numberOfOperationsRows(String filterOperation, String filterCurrency) {
         SQLiteDatabase db = this.getReadableDatabase();//получить обьект бд для чтения
-        if ("".equals(filter)) {   // если фильтр пуст
-            int numRows = (int) DatabaseUtils.queryNumEntries(db, DATABASE_EXCHANGE); //количество строчек строчек в таблице с именем
-            return numRows;//вернуть количество строчек
+        if ("".equals(filterOperation) && "".equals(filterCurrency)) {   // если фильтр пуст
+            return (int) DatabaseUtils.queryNumEntries(db, DATABASE_EXCHANGE);//вернуть количество строчек  //количество строчек строчек в таблице с именем
         } else { // иначе
-            String filter_string = " where " + DATABASE_FROM_CURRENCY + " = 'usd' AND " + DATABASE_TO_OPERATOIN + " = 'Покупка' ";//" where " + DATABASE_FROM_CURRENCY + " = '" + filter + "' ";
+            String filter_string = "";
+            if (!"".equals(filterOperation) && "".equals(filterCurrency)) {
+                filter_string = " where " + DATABASE_TO_OPERATOIN + " = '" + filterOperation + "'";
+            } else if ("".equals(filterOperation) && !"".equals(filterCurrency)) {
+                filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filterCurrency + "'";
+            } else if (!"".equals(filterOperation) && !"".equals(filterCurrency)) {
+                filter_string = " where " + DATABASE_FROM_CURRENCY + " = '" + filterCurrency + "' AND " + DATABASE_TO_OPERATOIN + " = '" + filterOperation + "' ";
+            }
             Cursor mCount = db.rawQuery("select count(*) from " + DATABASE_EXCHANGE + filter_string, null);// выполнить запрос в бд состоящее из строки в параметр
             mCount.moveToFirst();// получить первую запись из курсора
             int numRows = mCount.getInt(0);// получить первый столбик

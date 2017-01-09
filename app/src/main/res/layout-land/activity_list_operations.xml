@@ -37,12 +37,12 @@
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.18"
-                android:text="12 ltrf,hz 2016"
+                android:text="@string/filterDate"
                 android:textSize="30sp" />
 
             <Spinner
 
-                android:id="@+id/spinner"
+                android:id="@+id/Currencyspinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -56,23 +56,11 @@
 
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/OperationSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/amountValue"
                 android:layout_alignBottom="@+id/amountValue"
-                android:layout_toEndOf="@+id/amountValue"
-                android:layout_toRightOf="@+id/amountValue"
-                android:width="50dp"
-                android:contextClickable="true" />
-
-            <Spinner
-                android:id="@+id/spinner3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/amountValue"
-                android:layout_alignBottom="@+id/amountValue"
-                android:layout_marginLeft="40dp"
                 android:layout_toEndOf="@+id/amountValue"
                 android:layout_toRightOf="@+id/amountValue"
                 android:width="50dp"

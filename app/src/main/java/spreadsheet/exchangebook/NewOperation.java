@@ -252,7 +252,7 @@ public class NewOperation extends Activity {
         int lastSyncValue = prefs.getInt(LAST_SYNC_VALUE, 1);
         String json = "";
 
-        int count = db.numberOfOperationsRows("");
+        int count = db.numberOfOperationsRows("", "");
 
         for (int x = lastSyncValue; x <= count; x = x + 1) {
 
@@ -352,7 +352,7 @@ public class NewOperation extends Activity {
             alreadySyncGoing = false;
             textsync.setText(result);
             if (result.contains("\"status\":true")) {
-                int count = db.numberOfOperationsRows("");
+                int count = db.numberOfOperationsRows("", "");
                 SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.putInt(LAST_SYNC_VALUE, count + 1);

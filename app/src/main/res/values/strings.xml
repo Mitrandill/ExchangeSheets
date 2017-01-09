@@ -24,19 +24,19 @@
     <string name="Date">Date</string>
     <string name="twocurrency">Currency</string>
     <string name="sum">Sum</string>
-    <string name="twocourse">Course</string>
+    <string name="twocourse">rate</string>
     <string name="UAH">Uah</string>
-    <string name="title_activity_http_example">HttpExampleActivity</string>
     <string name="item_layout_date">Date</string>
     <string name="layout_item_button2">View</string>
     <string name="ukranian_hgrivna">UAH</string>
     <string name="Save">Save</string>
-    <string name="COURSE">COURSE</string>
+    <string name="COURSE">Rate</string>
     <string name="Comment1">Comment:</string>
     <string name="Operation">Operation</string>
     <string name="settings">settings</string>
     <string name="exit">Exit</string>
     <string name="SAVE">Save</string>
+    <string name="filterDate">FilterDate</string>
 
 
 </resources>

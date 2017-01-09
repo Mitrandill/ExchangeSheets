@@ -66,35 +66,35 @@ public class ListOperationActivity extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final Spinner spinnerFrom = (Spinner) findViewById(R.id.spinner);
-        spinnerFrom.setAdapter(adapter);
+        final Spinner spinnerCurrency = (Spinner) findViewById(R.id.Currencyspinner);
+        spinnerCurrency.setAdapter(adapter);
 
-        spinnerFrom.setPrompt("From Currency");
+        spinnerCurrency.setPrompt("From Currency");
 
-        spinnerFrom.setSelection(2);
+        spinnerCurrency.setSelection(5);
 
-        spinnerFrom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerCurrency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 switch (position) {
                     case 0:
-                        mAdapter.setCurrentFilter("EUR");
+                        mAdapter.setCurrentCurrency("EUR");
                         break;
                     case 1:
-                        mAdapter.setCurrentFilter("USD");
+                        mAdapter.setCurrentCurrency("USD");
                         break;
                     case 2:
-                        mAdapter.setCurrentFilter("RUB");
+                        mAdapter.setCurrentCurrency("RUB");
                         break;
                     case 3:
-                        mAdapter.setCurrentFilter("GBP");
+                        mAdapter.setCurrentCurrency("GBP");
                         break;
                     case 4:
-                        mAdapter.setCurrentFilter("PLN");
+                        mAdapter.setCurrentCurrency("PLN");
                         break;
                     default:
-                        mAdapter.setCurrentFilter("");
+                        mAdapter.setCurrentCurrency("");
                         break;
 
                 }
@@ -107,89 +107,34 @@ public class ListOperationActivity extends Activity {
             }
         });
 
-        final String[] CurrencyOperation = {"Покупка", "Продажа"};
+        final String[] CurrencyOperation = {"Покупка", "Продажа", ""};
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        final Spinner spinnerToOperation = (Spinner) findViewById(R.id.spinner2);
-        spinnerToOperation.setAdapter(adapter2);
+        final Spinner spinnerOperation = (Spinner) findViewById(R.id.OperationSpinner);
+        spinnerOperation.setAdapter(adapter2);
 
-        spinnerToOperation.setPrompt("To Operation");
+        spinnerOperation.setPrompt("To Operation");
 
-        spinnerToOperation.setSelection(1);
+        spinnerOperation.setSelection(2);
 
-        spinnerToOperation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                switch (position) {
-                    case 0:
-                        mAdapter.setCurrentOrder("from");
-                        break;
-
-                    case 1:      //    default:
-                        mAdapter.setCurrentOrder("to");
-                        break;
-                    default:
-                        mAdapter.setCurrentOrder("date");
-                        break;
-
-                }
-                mAdapter.notifyDataSetChanged();
-                recyclerView.invalidate();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
- /*       final String[] CurrencyTop = {"Покупка", "Продажа"};
-
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyTop);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        final Spinner spinnerTop = (Spinner) findViewById(R.id.spinner3);
-        spinnerTop.setAdapter(adapter3);
-
-        spinnerTop.setPrompt("Top Currency");
-
-        spinnerTop.setSelection(1);
-
-        spinnerTop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerOperation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 switch (position) {
 
 
-
                     case 0:
-                        mAdapter.setCurrentOrder("from");
+                        mAdapter.setCurrentOperation("Покупка");
                         break;
-
-                    case 1:      //    default:
-                        mAdapter.setCurrentOrder("to");
-                        break;
-                    default:
-                        mAdapter.setCurrentOrder("date");
-                        break;
-
-
-
-
-                    case 0:
-                        mAdapter.setCurrentTop("Покупка");
-                        break;
-
                     case 1:
-                        mAdapter.setCurrentTop("Продажа");
+                        mAdapter.setCurrentOperation("Продажа");
                         break;
                     default:
-                        mAdapter.setCurrentTop(" ");
+                        mAdapter.setCurrentOperation("");
                         break;
-
 
                 }
                 mAdapter.notifyDataSetChanged();
@@ -200,7 +145,6 @@ public class ListOperationActivity extends Activity {
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
-*/
 
         Button button = (Button) findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {

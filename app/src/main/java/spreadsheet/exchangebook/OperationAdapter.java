@@ -22,16 +22,16 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
     private DictionaryDBHelper db;
     private Activity parent;
-    private String currentOrder;
-    private String currentFilter;
+    private String currentOperation;
+    private String currentCurrency;
 
 
     OperationAdapter(DictionaryDBHelper db, Activity parent) {
 
         this.db = db;
         this.parent = parent;
-        this.currentOrder = "date";
-        this.currentFilter = " ";
+        this.currentOperation = "";
+        this.currentCurrency = "";
 
 
     }
@@ -58,7 +58,7 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ExchangeOperation el = db.getDataByPosition(position, this.currentOrder, this.currentFilter);
+        ExchangeOperation el = db.getDataByPosition(position, this.currentOperation, this.currentCurrency);
         double num1;
         double num2;
         double result;
@@ -91,22 +91,22 @@ class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.ViewHolder>
         holder.fromCurrency.setText(el.getFromCurrency());
         holder.toUAH.setText(Double.toString((double) el.gettoUAH() / 100.0));
         holder.created.setText(formatTo.format(date));
-        holder.curse.setText(toString().format(res));
+        holder.curse.setText(res);
     }
 
     @Override
     public int getItemCount() {
-        return db.numberOfOperationsRows(this.currentFilter);
+        return db.numberOfOperationsRows(this.currentOperation, this.currentCurrency);
     }
 
 
-    void setCurrentOrder(String currentOrder) {
-        this.currentOrder = currentOrder;
+    void setCurrentOperation(String currentOperation) {
+        this.currentOperation = currentOperation;
     }
 
 
-    void setCurrentFilter(String currentFilter) {
-        this.currentFilter = currentFilter;
+    void setCurrentCurrency(String currentCurrency) {
+        this.currentCurrency = currentCurrency;
     }
 
     // inner class to hold a reference to each item of RecyclerView
