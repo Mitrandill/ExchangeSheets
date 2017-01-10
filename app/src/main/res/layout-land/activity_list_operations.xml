@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Date"
                 android:textAlignment="viewEnd"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/item_layout_date3"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.18"
                 android:text="@string/filterDate"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <Spinner
 
@@ -80,25 +80,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/DATE_TIME"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/item_layout_2currency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:layout_weight="0.07"
                 android:text="@string/twocurrency"
                 android:textAlignment="viewEnd"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/item_layout_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
                 android:layout_weight="0.12"
                 android:text="@string/sum"
                 android:textAlignment="viewEnd"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/item_layout_course"
@@ -107,16 +109,16 @@
                 android:layout_weight="0.27"
                 android:text="@string/twocourse"
                 android:textAlignment="viewEnd"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/item_layout_UAH"
-                android:layout_width="48dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.29"
+                android:layout_weight="0.34"
                 android:text="@string/UAH"
                 android:textAlignment="viewEnd"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
 

@@ -34,7 +34,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:text="@string/Operation"
-                android:textSize="44sp" />
+                android:textSize="22sp" />
 
 
         </RelativeLayout>
@@ -55,7 +55,7 @@
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="Валюта"
-                android:textSize="44sp" />
+                android:textSize="22sp" />
 
             <EditText
 
@@ -68,7 +68,7 @@
                 android:maxLength="9"
                 android:text="12345"
                 android:textAlignment="viewEnd"
-                android:textSize="44sp" />
+                android:textSize="22sp" />
 
             <Spinner
                 android:id="@+id/spinner"
@@ -99,7 +99,7 @@
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="@string/UAH"
-                android:textSize="44sp" />
+                android:textSize="22sp" />
 
             <EditText
 
@@ -113,7 +113,7 @@
                 android:maxLength="9"
                 android:text="12345"
                 android:textAlignment="viewEnd"
-                android:textSize="44sp" />
+                android:textSize="22sp" />
 
             <Spinner
                 android:id="@+id/spinner2"

@@ -17,14 +17,14 @@
 
         <TextView
             android:id="@+id/youroperation_to_value_currency"
-            android:layout_width="91dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="500dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="400dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="0.16"
             android:gravity="right"
             android:text="@string/currency"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
         <!--
            android:id="@+id/textView6"
@@ -41,25 +41,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="154dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_weight="1.16"
+            android:layout_weight="0.12"
             android:text="@string/Date"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_date"
-            android:layout_width="1008dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_weight="0.18"
             android:text="11.11.16"
-            android:textSize="44sp" />
+            android:textAlignment="viewEnd"
+            android:textSize="22sp" />
 
     </LinearLayout>
 
@@ -68,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="100dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -79,15 +81,16 @@
             android:layout_marginLeft="30dp"
             android:layout_weight="0.20"
             android:text="@string/currency"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_from_value"
-            android:layout_width="98dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
             android:text="1234578.6"
-            android:textSize="44sp" />
+            android:textAlignment="viewEnd"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_from_value_currency"
@@ -96,7 +99,7 @@
             android:layout_weight="0.14"
             android:gravity="right"
             android:text="@string/currency"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
     </LinearLayout>
 
@@ -105,25 +108,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="140dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="156dp"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_weight="0.20"
+            android:layout_weight="0.18"
             android:text="@string/UAH"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_to_UAH"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.04"
             android:text="12345678.6"
-            android:textSize="44sp" />
+            android:textAlignment="viewEnd"
+            android:textSize="22sp" />
 
     </LinearLayout>
 
@@ -132,26 +137,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="175dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="154dp"
+            android:layout_width="158dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_weight="0.19"
+            android:layout_weight="0.17"
             android:text="@string/COURSE"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_curse"
             android:layout_width="98dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.03"
+            android:layout_weight="0.02"
             android:text="12345.6"
-            android:textSize="44sp" />
+            android:textAlignment="viewEnd"
+            android:textSize="22sp" />
 
 
     </LinearLayout>
@@ -162,7 +168,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="210dp"
         android:orientation="vertical"
         android:weightSum="1">
 
@@ -171,7 +177,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="30dp"
             android:text="@string/Comment1"
-            android:textSize="44sp" />
+            android:textSize="22sp" />
 
 
     </LinearLayout>
@@ -182,7 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="83dp"
+        android:layout_marginBottom="33dp"
         android:text="@string/Back" />
 
     <LinearLayout
@@ -190,24 +196,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="300dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="250dp"
         android:orientation="vertical"
         android:weightSum="1">
 
         <TextView
             android:id="@+id/youroperation_to_value_comment"
-            android:layout_width="1182dp"
-            android:layout_height="wrap_content"
+            android:layout_width="833dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/linearLayout5"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginLeft="50dp"
             android:background="@drawable/edittextstyle"
             android:gravity="left"
             android:inputType="textPersonName"
             android:text="@string/Comment"
-            android:textSize="34sp" />
+            android:textAlignment="viewStart"
+            android:textSize="22sp" />
 
 
     </LinearLayout>
