@@ -141,7 +141,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:text="@string/Comment" />
+                android:text="@string/Comment"
+                android:textSize="22sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -165,7 +166,7 @@
                     android:background="@drawable/edittextstyle"
                     android:inputType="textMultiLine"
                     android:text="44 1 ваш текс 1"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
 
                 <Button
                     android:id="@+id/Save"
@@ -183,16 +184,6 @@
             android:layout_width="match_parent"
             android:layout_height="140dp">
 
-            <TextView
-                android:id="@+id/new_operation_sync_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/new_operation_sync_button"
-                android:layout_centerHorizontal="true"
-                android:text="TextView"
-                android:textSize="24sp"
-                tools:text="No Sync Yet" />
-
             <Button
                 android:id="@+id/button"
                 android:layout_width="157dp"
@@ -205,6 +196,15 @@
                 android:textColor="?android:attr/textColorTertiary"
                 android:textSize="24sp" />
 
+            <TextView
+                android:id="@+id/new_operation_sync_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_operation_sync_button"
+                android:layout_centerHorizontal="true"
+                android:textSize="24sp"
+                tools:text="No Sync Yet" />
+
             <Button
                 android:id="@+id/new_operation_sync_button"
                 android:layout_width="wrap_content"
@@ -215,6 +215,7 @@
                 android:textAllCaps="false"
                 android:textColor="?android:attr/textColorTertiary"
                 android:textSize="24sp" />
+
         </RelativeLayout>
 
     </LinearLayout>

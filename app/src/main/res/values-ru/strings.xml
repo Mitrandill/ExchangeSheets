@@ -16,7 +16,8 @@
     <string name="title_activity_main">Меню авторизации</string>
     <string name="currency">Валюта</string>
     <string name="selection_menu">"Меню "</string>
-    <string name="view_operation">Новая Операция</string>
+    <string name="view_operation">Список Операций</string>
+    <string name="view_operation1">Просмотр Операции</string>
     <string name="menu_authorization">Авторизация</string>
     <string name="layout_item_button2">Просмотр</string>
     <string name="View">Просмотр</string>

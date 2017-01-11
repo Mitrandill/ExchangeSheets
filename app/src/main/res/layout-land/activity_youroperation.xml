@@ -197,7 +197,7 @@
 
         <TextView
             android:id="@+id/youroperation_to_value_comment"
-            android:layout_width="833dp"
+            android:layout_width="736dp"
             android:layout_height="80dp"
             android:layout_below="@+id/linearLayout5"
             android:layout_centerHorizontal="true"
@@ -205,9 +205,8 @@
             android:layout_marginLeft="50dp"
             android:background="@drawable/edittextstyle"
             android:gravity="left"
-            android:inputType="textPersonName"
+            android:inputType="textMultiLine"
             android:text="@string/Comment"
-            android:textAlignment="viewStart"
             android:textSize="22sp" />
 
 

@@ -12,7 +12,7 @@ import android.widget.Button;
 public class FirstStepActivity extends Activity {
 
     static final String SubCategoryStateName = "category";
-    Button exitButton;
+
 
     public void selectCategory(View view) {
         Intent intent = new Intent(this, MainMenuActivity.class);
@@ -31,13 +31,6 @@ public class FirstStepActivity extends Activity {
             }
         });
 
-        exitButton = (Button) findViewById(R.id.Exit);
-        exitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                doExit();
-            }
-        });
 
         this.setTitle(getString(R.string.menu_authorization));
 
@@ -64,14 +57,5 @@ public class FirstStepActivity extends Activity {
     }
 
 
-    protected void doExit() {
-        this.finish();
-        moveTaskToBack(true);
 
-        super.onDestroy();
-
-
-        System.exit(0);
-
-    }
 }

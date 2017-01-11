@@ -60,7 +60,7 @@ public class ListOperationActivity extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-        final String[] CurrencyNames = {"EUR", "USD", "RUB", "GBP", "PLN", ""};
+        final String[] CurrencyNames = {"EUR", "USD", "RUB", "GBP", "PLN", "Валюта"};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyNames);
@@ -107,7 +107,7 @@ public class ListOperationActivity extends Activity {
             }
         });
 
-        final String[] CurrencyOperation = {"Покупка", "Продажа", ""};
+        final String[] CurrencyOperation = {"Покупка", "Продажа", "Операция"};
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, CurrencyOperation);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

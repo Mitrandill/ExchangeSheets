@@ -214,6 +214,8 @@
                 android:text="No Sync Yet"
                 android:textAlignment="center"
                 android:textSize="20sp" />
+
+
         </RelativeLayout>
 
 

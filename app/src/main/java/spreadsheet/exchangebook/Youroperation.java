@@ -93,7 +93,7 @@ public class Youroperation extends Activity {
         });
 
 
-        this.setTitle(getString(R.string.view_operation) + id.toString());
+        this.setTitle(getString(R.string.view_operation1));
     }
 
 

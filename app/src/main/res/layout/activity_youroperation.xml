@@ -18,7 +18,8 @@
             android:id="@+id/youroperation_to_value_currency"
             android:layout_width="91dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="20dp"
             android:gravity="right"
             android:text="@string/currency"
             android:textSize="18sp" />
@@ -38,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
         <TextView
@@ -157,7 +158,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="210dp"
         android:orientation="vertical"
         android:weightSum="1">
 
@@ -165,7 +166,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="@string/Comment1" />
+            android:text="@string/Comment1"
+            android:textSize="22sp" />
 
 
     </LinearLayout>
@@ -181,15 +183,17 @@
 
         <TextView
             android:id="@+id/youroperation_to_value_comment"
-            android:layout_width="329dp"
-            android:layout_height="wrap_content"
+            android:layout_width="400dp"
+            android:layout_height="365dp"
             android:layout_below="@+id/linearLayout5"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:layout_marginLeft="84dp"
+            android:background="@drawable/edittextstyle"
             android:gravity="left"
-            android:inputType="textPersonName"
+            android:inputType="textMultiLine"
             android:text="@string/Comment"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
 
     </LinearLayout>
