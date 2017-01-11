@@ -79,15 +79,13 @@
             android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_weight="0.20"
             android:text="@string/currency"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_from_value"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.05"
             android:text="1234578.6"
             android:textAlignment="viewEnd"
             android:textSize="22sp" />
@@ -117,15 +115,13 @@
             android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_weight="0.18"
             android:text="@string/UAH"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_to_UAH"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.04"
             android:text="12345678.6"
             android:textAlignment="viewEnd"
             android:textSize="22sp" />
@@ -143,18 +139,16 @@
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="158dp"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_weight="0.17"
             android:text="@string/COURSE"
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/youroperation_curse"
-            android:layout_width="98dp"
+            android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.02"
             android:text="12345.6"
             android:textAlignment="viewEnd"
             android:textSize="22sp" />
