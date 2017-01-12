@@ -31,7 +31,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:text="Операция"
-                android:textSize="24sp"/>
+                android:textSize="22sp" />
 
 
         </RelativeLayout>
@@ -64,7 +64,7 @@
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="@string/currency"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <EditText
 
@@ -98,7 +98,7 @@
                 android:maxLength="9"
                 android:text="5"
                 android:textAlignment="viewEnd"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -111,7 +111,7 @@
                 android:width="100dp"
                 android:elevation="0dp"
                 android:text="@string/UAH"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <Spinner
                 android:id="@+id/spinner2"
@@ -193,7 +193,7 @@
                 android:text="@string/Back"
                 android:textAllCaps="false"
                 android:textColor="?android:attr/textColorTertiary"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
             <!--
                         <TextView
                             android:id="@+id/new_operation_sync_text"

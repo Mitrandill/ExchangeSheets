@@ -37,6 +37,6 @@
     <string name="exit">Exit</string>
     <string name="SAVE">Save</string>
     <string name="filterDate">FilterDate</string>
-
+    <string name="view_operation1">View Operation</string>
 
 </resources>
