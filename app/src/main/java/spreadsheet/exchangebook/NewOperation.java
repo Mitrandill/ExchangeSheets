@@ -120,7 +120,7 @@ public class NewOperation extends Activity {
         setContentView(R.layout.activity_new_operation);
 
         db = new DictionaryDBHelper(this);//создать экземпляр класса дб
-
+/*
         textsync = (TextView) findViewById(R.id.new_operation_sync_text);
         Button buttonsync = (Button) findViewById(R.id.new_operation_sync_button);
 
@@ -129,7 +129,7 @@ public class NewOperation extends Activity {
             public void onClick(View v) {
                 doSync();
             }
-        });
+        });*/
 
 
         comment = (EditText) findViewById(R.id.amountValue3);
@@ -274,9 +274,10 @@ public class NewOperation extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
             alreadySyncGoing = true;
             new RequestTask().execute("http://" + domain + "/", "deviceHash=abcdef&action=saveOperations&data=" + data);
-        } else {
-            textsync.setText("нет соединения ");
         }
+/* else {
+            textsync.setText("нет соединения ");
+ }*/
 
     }
 
@@ -350,7 +351,7 @@ public class NewOperation extends Activity {
         @Override
         protected void onPostExecute(String result) {
             alreadySyncGoing = false;
-            textsync.setText(result);
+            //         textsync.setText(result);
             if (result.contains("\"status\":true")) {
                 int count = db.numberOfOperationsRows("", "");
                 SharedPreferences prefs = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);

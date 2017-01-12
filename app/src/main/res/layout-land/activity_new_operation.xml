@@ -69,6 +69,7 @@
                 android:maxLength="9"
                 android:text="12345"
 
+                android:textAlignment="viewEnd"
                 android:textSize="22sp" />
 
             <Spinner
@@ -129,6 +130,7 @@
                 android:maxLength="9"
                 android:text="12345"
 
+                android:textAlignment="viewEnd"
                 android:textSize="22sp" />
 
         </RelativeLayout>
@@ -196,27 +198,27 @@
                 android:layout_centerHorizontal="true"
                 android:text="@string/Back"
                 android:textSize="20sp" />
+            <!--
+                        <Button
+                            android:id="@+id/new_operation_sync_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/button"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignStart="@+id/button"
+                            android:text="SYNC"
+                            android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/new_operation_sync_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/button"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/button"
-                android:text="SYNC"
-                android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/new_operation_sync_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="No Sync Yet"
+                            android:textAlignment="center"
+                            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/new_operation_sync_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="No Sync Yet"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-
+-->
         </RelativeLayout>
 
 

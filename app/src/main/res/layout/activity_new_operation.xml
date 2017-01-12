@@ -42,33 +42,6 @@
             android:layout_marginTop="10dp"
             android:layout_weight="0.08">
 
-            <EditText
-
-                android:id="@+id/amountValue"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/amountText"
-                android:inputType="numberDecimal"
-                android:maxLength="9"
-                android:text="12345"
-
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/amountText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/amountValue"
-                android:layout_alignBottom="@+id/amountValue"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:width="100dp"
-                android:elevation="0dp"
-                android:text="@string/currency"
-                android:textSize="24sp" />
-
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="70dp"
@@ -80,6 +53,33 @@
                 android:layout_marginRight="232dp"
                 android:width="50dp"
                 android:contextClickable="true" />
+
+            <TextView
+                android:id="@+id/amountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:width="100dp"
+                android:elevation="0dp"
+                android:text="@string/currency"
+                android:textSize="24sp" />
+
+            <EditText
+
+                android:id="@+id/amountValue"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/amountText"
+
+                android:layout_toRightOf="@+id/amountText"
+                android:inputType="numberDecimal"
+                android:maxLength="9"
+                android:text="12345"
+                android:textAlignment="viewEnd"
+                android:textSize="22sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -97,6 +97,7 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="5"
+                android:textAlignment="viewEnd"
                 android:textSize="24sp" />
 
             <TextView
@@ -193,27 +194,27 @@
                 android:textAllCaps="false"
                 android:textColor="?android:attr/textColorTertiary"
                 android:textSize="24sp" />
+            <!--
+                        <TextView
+                            android:id="@+id/new_operation_sync_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/new_operation_sync_button"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="24sp"
+                            tools:text="No Sync Yet" />
 
-            <TextView
-                android:id="@+id/new_operation_sync_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/new_operation_sync_button"
-                android:layout_centerHorizontal="true"
-                android:textSize="24sp"
-                tools:text="No Sync Yet" />
-
-            <Button
-                android:id="@+id/new_operation_sync_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="SYNC"
-                android:textAllCaps="false"
-                android:textColor="?android:attr/textColorTertiary"
-                android:textSize="24sp" />
-
+                        <Button
+                            android:id="@+id/new_operation_sync_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="SYNC"
+                            android:textAllCaps="false"
+                            android:textColor="?android:attr/textColorTertiary"
+                            android:textSize="24sp" />
+                        -->
         </RelativeLayout>
 
     </LinearLayout>
