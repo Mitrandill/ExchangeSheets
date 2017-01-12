@@ -53,7 +53,7 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
-                android:textAlignment="viewEnd"
+
                 android:textSize="22sp" />
 
             <TextView
@@ -97,7 +97,6 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="5"
-                android:textAlignment="viewEnd"
                 android:textSize="24sp" />
 
             <TextView
@@ -124,8 +123,7 @@
                 android:layout_toRightOf="@+id/amountUAH"
                 android:width="50dp"
                 android:contextClickable="true"
-                android:gravity="right|start"
-                android:textAlignment="viewEnd" />
+                android:gravity="right|start" />
 
         </RelativeLayout>
 

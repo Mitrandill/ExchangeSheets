@@ -91,7 +91,7 @@
             android:layout_marginLeft="10dp"
             android:gravity="right"
             android:text="@string/currency"
-            android:textAlignment="viewStart"
+
             android:textSize="18sp" />
 
     </LinearLayout>

@@ -23,31 +23,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="1">
+            <!--
+                        <TextView
+                            android:id="@+id/item_layout_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Date"
+                            android:textAlignment="viewEnd"
+                            android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/item_layout_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Date"
-                android:textAlignment="viewEnd"
-                android:textSize="22sp" />
-
-            <EditText
-                android:id="@+id/item_layout_date3"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.18"
-                android:text="@string/filterDate"
-                android:textSize="22sp" />
-
+                        <EditText
+                            android:id="@+id/item_layout_date3"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.18"
+                            android:text="@string/filterDate"
+                            android:textSize="22sp" />
+                        -->
             <Spinner
 
                 android:id="@+id/Currencyspinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="61dp"
-                android:layout_marginStart="61dp"
+                android:layout_marginLeft="261dp"
                 android:layout_toEndOf="@+id/textView4"
                 android:layout_toRightOf="@+id/textView4"
                 android:width="50dp"
@@ -137,7 +136,7 @@
         android:layout_above="@+id/button4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
     </android.support.v7.widget.RecyclerView>

@@ -1,7 +1,6 @@
 package spreadsheet.exchangebook;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -33,7 +31,7 @@ public class ListOperationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_operations);
         db = new DictionaryDBHelper(this);
-
+/*
         fromDate = (EditText) findViewById(R.id.item_layout_date3);
         fromDate.setText("");
 
@@ -48,6 +46,7 @@ public class ListOperationActivity extends Activity {
                 }, 2017, 1, 1).show();
             }
         });
+  */
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.OperationsList);
 
 

@@ -57,19 +57,6 @@
                 android:text="Валюта"
                 android:textSize="22sp" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="27dp"
-                android:layout_marginStart="27dp"
-                android:layout_toEndOf="@+id/amountValue"
-                android:layout_toRightOf="@+id/amountValue"
-                android:width="50dp"
-                android:contextClickable="true"
-                android:minHeight="47dp" />
-
             <EditText
 
                 android:id="@+id/amountValue"
@@ -81,8 +68,22 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
-                android:textAlignment="textEnd"
+
                 android:textSize="22sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="64dp"
+                android:layout_marginStart="64dp"
+                android:layout_toEndOf="@+id/amountValue"
+                android:layout_toRightOf="@+id/amountValue"
+                android:width="50dp"
+                android:contextClickable="true"
+                android:minHeight="47dp"
+                android:textAlignment="viewEnd" />
 
         </RelativeLayout>
 
@@ -127,7 +128,7 @@
                 android:inputType="numberDecimal"
                 android:maxLength="9"
                 android:text="12345"
-                android:textAlignment="viewEnd"
+
                 android:textSize="22sp" />
 
         </RelativeLayout>
