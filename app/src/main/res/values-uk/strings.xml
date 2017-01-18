@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ExchangeBook</string>
+    <string name="Back">Назад</string>
+    <string name="BackButton">Вихід</string>
+    <string name="COURSE">Курс</string>
+    <string name="Comment">Коментарій</string>
+    <string name="Comment1">Коментарій:</string>
+    <string name="DATE_TIME">Дата Час</string>
+    <string name="Date">Дата</string>
+    <string name="NextButton2">Нова Операція</string>
+    <string name="NextButton">Вхід</string>
+    <string name="Hello">Добрий день користувач !</string>
+    <string name="NextButton3">Перегляд операцій</string>
+    <string name="Operation">Операція</string>
+    <string name="SAVE">Зберегти</string>
+    <string name="Save">Зберегти</string>
+    <string name="View">Перегляд</string>
+    <string name="UAH">Гривна</string>
+    <string name="WelcomeText">Добридень! Будь ласка авторизуйтесь!</string>
+    <string name="WelcomeText1">Будь ласка виберіть цікаву для вас операцію!</string>
+    <string name="exit">Вихiд</string>
+    <string name="currency">Валюта</string>
+    <string name="filterDate"></string>
+    <string name="item_layout_date">Дата</string>
+    <string name="layout_item_button2">Перегляд</string>
+    <string name="menu_authorization">Авторизація</string>
+    <string name="new_exchange">Новий обмін</string>
+    <string name="selection_menu">\"Меню \"</string>
+    <string name="settings">Налаштування</string>
+    <string name="sum">Сума</string>
+    <string name="title_activity_category_select">Вибір перегляду операцій</string>
+    <string name="title_activity_main">Меню авторизації</string>
+    <string name="title_activity_main_menu">Меню вибору операцій</string>
+    <string name="title_activity_new_operation">Нова Операція</string>
+    <string name="twocourse">Курс</string>
+    <string name="twocurrency">Валюта</string>
+    <string name="ukranian_hgrivna">Гривна</string>
+    <string name="view_operation1">Перегляд Операцій</string>
+    <string name="view_operation">Список Операцій</string>
+    <string name="title_activity_list2">лист2</string>
+</resources>

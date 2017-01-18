@@ -37,4 +37,6 @@
     <string name="settings">Настройки</string>
     <string name="exit">Выход</string>
     <string name="Save">Сохранить</string>
+    <string name="filterDate">Фильтр Даты</string>
+    <string name="title_activity_list2">лист2</string>
 </resources>
