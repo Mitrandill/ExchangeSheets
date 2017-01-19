@@ -3,11 +3,11 @@
     <string name="app_name">ExchangeBook</string>
     <string name="Back">Назад</string>
     <string name="BackButton">Выход</string>
-    <string name="Hello">Добрый день пользователь !</string>
+    <string name="Hello">Добрый день!</string>
     <string name="NextButton">Вход</string>
     <string name="NextButton2">Новая Операция</string>
     <string name="NextButton3">Просмотр операций</string>
-    <string name="WelcomeText">Добрый день! Пожалуйста авторизируйтесь!</string>
+    <string name="WelcomeText">Пожалуйста авторизируйтесь!</string>
     <string name="WelcomeText1">Пожалуйста выберите интересующую операцию</string>
     <string name="new_exchange">Новый обмен</string>
     <string name="title_activity_category_select">Выбор просмотра операций</string>
@@ -15,7 +15,7 @@
     <string name="title_activity_main_menu">Меню выбора операций</string>
     <string name="title_activity_main">Меню авторизации</string>
     <string name="currency">Валюта</string>
-    <string name="selection_menu">"Меню "</string>
+    <string name="selection_menu">Меню</string>
     <string name="view_operation">Список Операций</string>
     <string name="view_operation1">Просмотр Операции</string>
     <string name="menu_authorization">Авторизация</string>
@@ -25,10 +25,10 @@
     <string name="DATE_TIME">Дата Время</string>
     <string name="item_layout_date">Дата</string>
     <string name="Date">Дата</string>
-    <string name="twocurrency">ВАЛЮТА</string>
+    <string name="twocurrency">Валюта</string>
     <string name="sum">Сумма</string>
     <string name="ukranian_hgrivna">Гривна</string>
-    <string name="twocourse">КУРС</string>
+    <string name="twocourse">Курс</string>
     <string name="UAH">Гривна</string>
     <string name="SAVE">Сохранить</string>
     <string name="COURSE">Курс</string>
